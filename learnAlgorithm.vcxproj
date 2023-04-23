@@ -118,7 +118,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="datastructure\CArray.cpp" />
+    <ClCompile Include="datastructure\LinkList.cpp" />
+    <ClCompile Include="datastructure\LoopQue.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="datastructure\test\TestCArray.cpp" />
+    <ClCompile Include="datastructure\SequenList.cpp" />
+    <ClCompile Include="datastructure\SeqStack.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="datastructure\CArray.h" />
+    <ClInclude Include="datastructure\test\TestCArray.h" />
+    <ClInclude Include="datastructure\SequenList.h" />
+    <ClInclude Include="datastructure\LinkList.h" />
+    <ClInclude Include="datastructure\LoopQue.h" />
+    <ClInclude Include="datastructure\SeqStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,7 +12,7 @@ public:
 	bool empty_queue();
 	bool en_queue(ElemType elem);
 	bool de_queue(ElemType &elem);
-	int front_queue(ElemType &elem);
+	bool front_queue(ElemType &elem);
 private:
 	ElemType *base;
 	int front;
