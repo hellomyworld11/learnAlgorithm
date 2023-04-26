@@ -118,21 +118,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="datastructure\BinaryTree.cpp" />
     <ClCompile Include="datastructure\CArray.cpp" />
     <ClCompile Include="datastructure\LinkList.cpp" />
     <ClCompile Include="datastructure\LoopQue.cpp" />
+    <ClCompile Include="datastructure\LinkStack.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="datastructure\test\TestCArray.cpp" />
     <ClCompile Include="datastructure\SequenList.cpp" />
     <ClCompile Include="datastructure\SeqStack.cpp" />
+    <ClCompile Include="datastructure\XString.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="datastructure\BinaryTree.h" />
     <ClInclude Include="datastructure\CArray.h" />
     <ClInclude Include="datastructure\test\TestCArray.h" />
     <ClInclude Include="datastructure\SequenList.h" />
     <ClInclude Include="datastructure\LinkList.h" />
     <ClInclude Include="datastructure\LoopQue.h" />
     <ClInclude Include="datastructure\SeqStack.h" />
+    <ClInclude Include="datastructure\LinkStack.h" />
+    <ClInclude Include="datastructure\XString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

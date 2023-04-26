@@ -107,7 +107,44 @@ void CBinaryTree::in_order_s(Node *cur)
 
 void CBinaryTree::post_order_s(Node *cur)
 {
+	Stack *stack = CreateStack();
+	std::vector<Node*> v;
+	Push(stack, cur);
+	while (!IsEmpty(stack))
+	{
+		cur = Pop(stack);
+		v.push_back(cur);
+		if (cur->left)
+			Push(stack, cur->left);
+		if (cur->right)
+			Push(stack, cur->right);
+	}
+	reverse(v.begin(), v.end());
+	for (Node *p : v)
+	{
+		std::cout << p->data;
+	}
+}
 
+void CBinaryTree::level_order(Node *cur)
+{
+	std::queue<Node * > q;
+	if (!cur) return;
+	q.push(cur);
+	while (!q.empty())
+	{
+		Node *p = q.front();
+		q.pop();
+		std::cout << p->data;
+		if (p->left)
+		{
+			q.push(p->left);
+		}
+		if (p->right)
+		{
+			q.push(p->right);
+		}
+	}
 }
 
 Node * CBinaryTree::find(Node *cur, ElemType e)
@@ -139,10 +176,34 @@ void CBinaryTree::destroy(Node *cur)
 
 
 
+int CBinaryTree::count(Node *cur)
+{
+	int ln, rn;
+	if (cur == nullptr)
+	{
+		return 0;
+	}
+	ln = Count(cur->left);
+	rn = Count(cur->right);
+	return ln + rn + 1;
+}
+
+int CBinaryTree::height(Node *cur)
+{
+	if (cur == nullptr)
+	{
+		return 0;
+	}
+	else
+	{
+		return std::max(height(cur->left), height(cur->right)) + 1;
+	}
+}
+
 // 初始化 
 Stack* CreateStack() {
 	Stack* p;
-	p = (Stack)new[sizeof(struct SNode)];
+	p = (Stack*)new[sizeof(Stack)];
 	p->Next = nullptr;
 	return p;
 }
@@ -155,7 +216,7 @@ int IsEmpty(Stack* p) {
 // 入栈
 void Push(Stack* p, Node *n) {
 	Stack* tmp;
-	tmp = (Stack)new[sizeof(struct SNode)];
+	tmp = (Stack*)new[sizeof(Stack)];
 	tmp->Data = n;
 	// 链栈栈顶元素是链表头结点，新入栈的链表在栈顶元素后面 
 	tmp->Next = p->Next;
