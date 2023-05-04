@@ -118,6 +118,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AVLTree.cpp" />
+    <ClCompile Include="datastructure\BSTTree.cpp" />
     <ClCompile Include="datastructure\BinaryTree.cpp" />
     <ClCompile Include="datastructure\CArray.cpp" />
     <ClCompile Include="datastructure\LinkList.cpp" />
@@ -130,6 +132,8 @@
     <ClCompile Include="datastructure\XString.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AVLTree.h" />
+    <ClInclude Include="datastructure\BSTTree.h" />
     <ClInclude Include="datastructure\BinaryTree.h" />
     <ClInclude Include="datastructure\CArray.h" />
     <ClInclude Include="datastructure\test\TestCArray.h" />

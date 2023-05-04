@@ -176,6 +176,30 @@ void CBinaryTree::destroy(Node *cur)
 
 
 
+bool CBinaryTree::isempty()
+{
+	return root == nullptr;
+}
+
+Node * CBinaryTree::createTree()
+{
+	ElemType elem;
+	Node *p;
+	std::cin >> elem;
+	if (elem == -9999)
+	{
+		p = nullptr;
+	}
+	else
+	{
+		p = new Node;
+		p->data = elem;
+		p->left = createTree();
+		p->right = createTree();
+	}
+	return p;
+}
+
 int CBinaryTree::count(Node *cur)
 {
 	int ln, rn;
