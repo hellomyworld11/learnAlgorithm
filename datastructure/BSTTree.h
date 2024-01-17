@@ -7,7 +7,7 @@ typedef struct Node {
 	Node *right = nullptr;
 };
 
-
+//¶ş²æ²éÕÒÊ÷
 class CBSTTree
 {
 public:

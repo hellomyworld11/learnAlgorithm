@@ -25,7 +25,7 @@ Node* Pop(Stack* S);  // ³öÕ»
 
 
 
-
+//¶ş²æÊ÷
 class CBinaryTree
 {
 public:

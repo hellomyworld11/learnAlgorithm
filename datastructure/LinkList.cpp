@@ -101,7 +101,7 @@ int CLinkList::deleted(int i)
 	return 0;
 }
 
-Node * CLinkList::find(int i)
+Node * CLinkList::findByIndex(int i)
 {
 	if (i < 0 || i > len || len == 0)
 	{
@@ -183,7 +183,7 @@ Node * SolutionList::merge(Node *l1, Node *l2)
 	}
 	else
 	{
-		l2->next = Solution::merge(l1, l2->next);
+		l2->next = SolutionList::merge(l1, l2->next);
 		return l2;
 	}
 }

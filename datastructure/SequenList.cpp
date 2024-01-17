@@ -55,7 +55,7 @@ ElemType CSequenList::get(int i)
 {
 	if (i < 0 || i >= len)
 	{
-		return ;
+		return -1;
 	}
 	return datas[i];
 }

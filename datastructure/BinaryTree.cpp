@@ -207,8 +207,8 @@ int CBinaryTree::count(Node *cur)
 	{
 		return 0;
 	}
-	ln = Count(cur->left);
-	rn = Count(cur->right);
+	ln = count(cur->left);
+	rn = count(cur->right);
 	return ln + rn + 1;
 }
 
@@ -226,8 +226,7 @@ int CBinaryTree::height(Node *cur)
 
 // 初始化 
 Stack* CreateStack() {
-	Stack* p;
-	p = (Stack*)new[sizeof(Stack)];
+	Stack* p = (Stack*)new Stack;
 	p->Next = nullptr;
 	return p;
 }
@@ -240,7 +239,7 @@ int IsEmpty(Stack* p) {
 // 入栈
 void Push(Stack* p, Node *n) {
 	Stack* tmp;
-	tmp = (Stack*)new[sizeof(Stack)];
+	tmp = (Stack*)new Stack;
 	tmp->Data = n;
 	// 链栈栈顶元素是链表头结点，新入栈的链表在栈顶元素后面 
 	tmp->Next = p->Next;
@@ -253,7 +252,7 @@ Node* Pop(Stack* S) {
 	Node* TopVal;
 	if (IsEmpty(S)) {
 		std::cout << "stack empty" << std::endl;
-		return;
+		return NULL;
 	}
 	else {
 		First = S->Next;   // 出栈第一个元素在栈顶元素后面 

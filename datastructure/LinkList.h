@@ -17,7 +17,7 @@ public:
 	int tailCreate(int n = 1);
 	int insert(ElemType elem, int i);
 	int deleted(int i);
-	Node *find(int i);
+	Node *findByIndex(int i);
 	Node *find(ElemType val);	
 	void reverse();
 	void clear();

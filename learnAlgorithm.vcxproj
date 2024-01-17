@@ -68,7 +68,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>F:\mycode\gitcode\learnAlgorithm\datastructure;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>F:\mycode\gitcode\learnAlgorithm\datastructure;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -118,21 +123,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AVLTree.cpp" />
+    <ClCompile Include="datastructure\AVLTree.cpp" />
     <ClCompile Include="datastructure\BSTTree.cpp" />
     <ClCompile Include="datastructure\BinaryTree.cpp" />
     <ClCompile Include="datastructure\CArray.cpp" />
     <ClCompile Include="datastructure\LinkList.cpp" />
     <ClCompile Include="datastructure\LoopQue.cpp" />
     <ClCompile Include="datastructure\LinkStack.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="datastructure\Heap.cpp" />
     <ClCompile Include="datastructure\test\TestCArray.cpp" />
     <ClCompile Include="datastructure\SequenList.cpp" />
     <ClCompile Include="datastructure\SeqStack.cpp" />
     <ClCompile Include="datastructure\XString.cpp" />
+    <ClCompile Include="leetcode\main.cpp" />
+    <ClCompile Include="leetcode\Simple.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AVLTree.h" />
+    <ClInclude Include="datastructure\AVLTree.h" />
     <ClInclude Include="datastructure\BSTTree.h" />
     <ClInclude Include="datastructure\BinaryTree.h" />
     <ClInclude Include="datastructure\CArray.h" />
@@ -143,6 +150,8 @@
     <ClInclude Include="datastructure\SeqStack.h" />
     <ClInclude Include="datastructure\LinkStack.h" />
     <ClInclude Include="datastructure\XString.h" />
+    <ClInclude Include="datastructure\Heap.h" />
+    <ClInclude Include="leetcode\Simple.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
