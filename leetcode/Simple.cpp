@@ -78,3 +78,23 @@ int Simple::removeElement(vector<int>& nums, int val)
 	}
 	return t_curIndex;
 }
+
+//  ‰»Î£∫head = [1, 2, 3, 4, 5], n = 2
+//  ‰≥ˆ£∫[1, 2, 3, 5]
+ListNode* Simple::removeNthFromEnd(ListNode* head, int n)
+{
+	ListNode* dummy = new ListNode(0, head);
+	ListNode* first = head;
+	ListNode* second = dummy;
+	for (int i = 0; i < n; ++i) {
+		first = first->next;
+	}
+	while (first) {
+		first = first->next;
+		second = second->next;
+	}
+	second->next = second->next->next;
+	ListNode* ans = dummy->next;
+	delete dummy;
+	return ans;
+}
