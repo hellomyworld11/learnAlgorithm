@@ -31,8 +31,9 @@ public:
 	//27 
 	int removeElement(vector<int>& nums, int val);
 	//链表
-	//19
+	//19 删除倒数第n个节点
 	ListNode* removeNthFromEnd(ListNode* head, int n);
-
+	//24 两两交换链表中的节点
+	ListNode* swapPairs(ListNode* head);
 };
 

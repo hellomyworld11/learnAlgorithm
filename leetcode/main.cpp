@@ -3,15 +3,15 @@
 
 void CreateListNode(ListNode*& list)
 {
-	list = new ListNode(3);
-// 	ListNode* list1 = new ListNode(2);
-// 	ListNode* list2 = new ListNode(4);
-// 	ListNode* list3 = new ListNode(2);
-// 	ListNode* list4 = new ListNode(0);
-	list->next = nullptr;
-// 	list1->next = list2;
-// 	list2->next = list3;
-// 	list3->next = list4;
+	list = new ListNode(1);
+	ListNode* list1 = new ListNode(2);
+	ListNode* list2 = new ListNode(3);
+	ListNode* list3 = new ListNode(4);
+	//ListNode* list4 = new ListNode(5);
+	list->next = list1;
+	list1->next = list2;
+	list2->next = list3;
+ 	list3->next = nullptr;
 }
 
 void PrintList(ListNode* list)
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	//int ret = simple.removeElement(v, 2);
 	ListNode *list;
 	CreateListNode(list);
-	PrintList(simple.removeNthFromEnd(list, 1));
+	PrintList(simple.swapPairs(list));
 
 	getchar();
 	return 0;

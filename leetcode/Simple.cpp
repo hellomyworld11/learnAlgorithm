@@ -82,7 +82,8 @@ int Simple::removeElement(vector<int>& nums, int val)
 // 输入：head = [1, 2, 3, 4, 5], n = 2
 // 输出：[1, 2, 3, 5]
 ListNode* Simple::removeNthFromEnd(ListNode* head, int n)
-{
+{	
+	//快慢指针 先把快指针偏移n步， 再同步偏移，指导快指针指向空，此时到达链表尾部，慢指针的下一个就是目标删除节点
 	ListNode* dummy = new ListNode(0, head);
 	ListNode* first = head;
 	ListNode* second = dummy;
@@ -97,4 +98,19 @@ ListNode* Simple::removeNthFromEnd(ListNode* head, int n)
 	ListNode* ans = dummy->next;
 	delete dummy;
 	return ans;
+}
+
+//输入：head = [1,2,3,4]
+//输出：[2, 1, 4, 3]
+ListNode* Simple::swapPairs(ListNode* head)
+{
+	if (head == nullptr || head->next == nullptr)return head;
+
+	// 第一个节点的next 指向 第二个节点的next
+	// 第二个节点的next 指向第一个节点 
+	// 第一个节点指向next
+	ListNode* newHead = head->next;
+	head->next = swapPairs(newHead->next); //从后往前交换
+	newHead->next = head;
+	return newHead;
 }
