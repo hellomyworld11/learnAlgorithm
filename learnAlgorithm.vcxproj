@@ -123,6 +123,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="algorithm\main.cpp" />
+    <ClCompile Include="algorithm\UtilSort.cpp" />
     <ClCompile Include="datastructure\AVLTree.cpp" />
     <ClCompile Include="datastructure\BSTTree.cpp" />
     <ClCompile Include="datastructure\BinaryTree.cpp" />
@@ -135,11 +137,12 @@
     <ClCompile Include="datastructure\SequenList.cpp" />
     <ClCompile Include="datastructure\SeqStack.cpp" />
     <ClCompile Include="datastructure\XString.cpp" />
-    <ClCompile Include="HashTable.cpp" />
+    <ClCompile Include="datastructure\HashTable.cpp" />
     <ClCompile Include="leetcode\main.cpp" />
     <ClCompile Include="leetcode\Simple.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="algorithm\UtilSort.h" />
     <ClInclude Include="datastructure\AVLTree.h" />
     <ClInclude Include="datastructure\BSTTree.h" />
     <ClInclude Include="datastructure\BinaryTree.h" />
@@ -152,7 +155,7 @@
     <ClInclude Include="datastructure\LinkStack.h" />
     <ClInclude Include="datastructure\XString.h" />
     <ClInclude Include="datastructure\Heap.h" />
-    <ClInclude Include="HashTable.h" />
+    <ClInclude Include="datastructure\HashTable.h" />
     <ClInclude Include="leetcode\Simple.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
