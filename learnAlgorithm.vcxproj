@@ -156,6 +156,7 @@
     <ClInclude Include="datastructure\XString.h" />
     <ClInclude Include="datastructure\Heap.h" />
     <ClInclude Include="datastructure\HashTable.h" />
+    <ClInclude Include="helloAlg\linkedlist_stack.h" />
     <ClInclude Include="leetcode\Simple.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

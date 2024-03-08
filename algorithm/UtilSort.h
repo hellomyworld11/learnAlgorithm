@@ -67,7 +67,9 @@ void InsertSort(vector<_Type>& v)
 	}
 }
 
-//快速排序 
+//快速排序  O(nlogn)
+//1. 选择1个基数  把比它小的放前面，比它大的放后面。
+//2. 分别对左边区 和右边区进行排序 直到区域只有1个数
 template <typename _Type>
 void QuickSort(vector<_Type>& v)
 {
@@ -104,6 +106,42 @@ void QuickSubSort(vector<_Type>& v, int low, int high)
 }
 
 
+//堆排序 
+template <typename _Type>
+void HeapSort(vector<_Type>& v)
+{
+	int len = v.size();
+	// 初始化， i 從最後一個父结点開始調整
+	for (int i = len / 2 - 1; i >= 0; i--)
+		max_heapify(arr, i, len - 1);
+	// 先將第一個元素和已经排好的元素前一位做交换,再從新調整 ( 刚调整的元素之前的元素 ),直到排序完畢
+	for (int i = len - 1; i > 0; i--) {
+		swap(arr[0], arr[i]);
+		max_heapify(arr, 0, i - 1);
+	}
+}
+
+//  堆排序：（最大堆，有序区）。从堆顶把根卸出来放在有序区之前，再恢复堆。
+template <typename _Type>
+void max_heapify(vector<_Type>& v, int start, int end) {
+	// 建立父结点指标和子结点指标
+	int dad = start;
+	int son = dad * 2 + 1;
+	while (son <= end) { // 若子结点指标在范围內才做比较
+		if (son + 1 <= end && arr[son] < arr[son + 1])
+			9 / 18
+			// 先比较兩個子结点大小，选择最大的
+			son++;
+		if (arr[dad] > arr[son])
+			// 如果父结点大於子结点代表调整完成，直接跳出函数
+			return;
+		else { // 否則交换父子內容再继续子结点和孙结点比较
+			swap(arr[dad], arr[son]);
+			dad = son;
+			son = dad * 2 + 1;
+		}
+	}
+}
 
 template <typename _Type>
 void PrintVec(vector<_Type>& v);
