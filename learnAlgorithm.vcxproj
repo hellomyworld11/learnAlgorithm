@@ -138,6 +138,7 @@
     <ClCompile Include="datastructure\SeqStack.cpp" />
     <ClCompile Include="datastructure\XString.cpp" />
     <ClCompile Include="datastructure\HashTable.cpp" />
+    <ClCompile Include="helloAlg\binary_tree_bfs.cpp" />
     <ClCompile Include="leetcode\main.cpp" />
     <ClCompile Include="leetcode\Simple.cpp" />
   </ItemGroup>
@@ -156,6 +157,8 @@
     <ClInclude Include="datastructure\XString.h" />
     <ClInclude Include="datastructure\Heap.h" />
     <ClInclude Include="datastructure\HashTable.h" />
+    <ClInclude Include="helloAlg\array_binary_tree.h" />
+    <ClInclude Include="helloAlg\binary_tree_bfs.h" />
     <ClInclude Include="helloAlg\linkedlist_stack.h" />
     <ClInclude Include="leetcode\Simple.h" />
   </ItemGroup>
