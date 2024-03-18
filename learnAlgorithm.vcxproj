@@ -123,7 +123,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="algorithm\main.cpp" />
     <ClCompile Include="algorithm\UtilSort.cpp" />
     <ClCompile Include="datastructure\AVLTree.cpp" />
     <ClCompile Include="datastructure\BSTTree.cpp" />
@@ -138,7 +137,7 @@
     <ClCompile Include="datastructure\SeqStack.cpp" />
     <ClCompile Include="datastructure\XString.cpp" />
     <ClCompile Include="datastructure\HashTable.cpp" />
-    <ClCompile Include="helloAlg\binary_tree_bfs.cpp" />
+    <ClCompile Include="helloAlg\chapter_heap\my_heap.cpp" />
     <ClCompile Include="leetcode\main.cpp" />
     <ClCompile Include="leetcode\Simple.cpp" />
   </ItemGroup>
@@ -157,9 +156,11 @@
     <ClInclude Include="datastructure\XString.h" />
     <ClInclude Include="datastructure\Heap.h" />
     <ClInclude Include="datastructure\HashTable.h" />
-    <ClInclude Include="helloAlg\array_binary_tree.h" />
-    <ClInclude Include="helloAlg\binary_tree_bfs.h" />
-    <ClInclude Include="helloAlg\linkedlist_stack.h" />
+    <ClInclude Include="helloAlg\utils\common.hpp" />
+    <ClInclude Include="helloAlg\utils\list_node.hpp" />
+    <ClInclude Include="helloAlg\utils\print_utils.hpp" />
+    <ClInclude Include="helloAlg\utils\tree_node.hpp" />
+    <ClInclude Include="helloAlg\utils\vertex.hpp" />
     <ClInclude Include="leetcode\Simple.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
