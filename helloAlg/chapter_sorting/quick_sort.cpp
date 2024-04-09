@@ -6,137 +6,137 @@
 
 #include "../utils/common.hpp"
 
-/* å¿«é€Ÿæ’åºç±» */
+/* ¿ìËÙÅÅĞòÀà */
 class QuickSort {
-  private:
-    /* å…ƒç´ äº¤æ¢ */
+private:
+    /* ÔªËØ½»»» */
     static void swap(vector<int> &nums, int i, int j) {
         int tmp = nums[i];
         nums[i] = nums[j];
         nums[j] = tmp;
     }
 
-    /* å“¨å…µåˆ’åˆ† */
+    /* ÉÚ±ø»®·Ö */
     static int partition(vector<int> &nums, int left, int right) {
-        // ä»¥ nums[left] ä¸ºåŸºå‡†æ•°
+        // ÒÔ nums[left] Îª»ù×¼Êı
         int i = left, j = right;
         while (i < j) {
             while (i < j && nums[j] >= nums[left])
-                j--; // ä»å³å‘å·¦æ‰¾é¦–ä¸ªå°äºåŸºå‡†æ•°çš„å…ƒç´ 
+                j--; // ´ÓÓÒÏò×óÕÒÊ×¸öĞ¡ÓÚ»ù×¼ÊıµÄÔªËØ
             while (i < j && nums[i] <= nums[left])
-                i++;          // ä»å·¦å‘å³æ‰¾é¦–ä¸ªå¤§äºåŸºå‡†æ•°çš„å…ƒç´ 
-            swap(nums, i, j); // äº¤æ¢è¿™ä¸¤ä¸ªå…ƒç´ 
+                i++;          // ´Ó×óÏòÓÒÕÒÊ×¸ö´óÓÚ»ù×¼ÊıµÄÔªËØ
+            swap(nums, i, j); // ½»»»ÕâÁ½¸öÔªËØ
         }
-        swap(nums, i, left); // å°†åŸºå‡†æ•°äº¤æ¢è‡³ä¸¤å­æ•°ç»„çš„åˆ†ç•Œçº¿
-        return i;            // è¿”å›åŸºå‡†æ•°çš„ç´¢å¼•
+        swap(nums, i, left); // ½«»ù×¼Êı½»»»ÖÁÁ½×ÓÊı×éµÄ·Ö½çÏß
+        return i;            // ·µ»Ø»ù×¼ÊıµÄË÷Òı
     }
 
-  public:
-    /* å¿«é€Ÿæ’åº */
+public:
+    /* ¿ìËÙÅÅĞò */
     static void quickSort(vector<int> &nums, int left, int right) {
-        // å­æ•°ç»„é•¿åº¦ä¸º 1 æ—¶ç»ˆæ­¢é€’å½’
+        // ×ÓÊı×é³¤¶ÈÎª 1 Ê±ÖÕÖ¹µİ¹é
         if (left >= right)
             return;
-        // å“¨å…µåˆ’åˆ†
+        // ÉÚ±ø»®·Ö
         int pivot = partition(nums, left, right);
-        // é€’å½’å·¦å­æ•°ç»„ã€å³å­æ•°ç»„
+        // µİ¹é×ó×ÓÊı×é¡¢ÓÒ×ÓÊı×é
         quickSort(nums, left, pivot - 1);
         quickSort(nums, pivot + 1, right);
     }
 };
 
-/* å¿«é€Ÿæ’åºç±»ï¼ˆä¸­ä½åŸºå‡†æ•°ä¼˜åŒ–ï¼‰ */
+/* ¿ìËÙÅÅĞòÀà£¨ÖĞÎ»»ù×¼ÊıÓÅ»¯£© */
 class QuickSortMedian {
-  private:
-    /* å…ƒç´ äº¤æ¢ */
+private:
+    /* ÔªËØ½»»» */
     static void swap(vector<int> &nums, int i, int j) {
         int tmp = nums[i];
         nums[i] = nums[j];
         nums[j] = tmp;
     }
 
-    /* é€‰å–ä¸‰ä¸ªå€™é€‰å…ƒç´ çš„ä¸­ä½æ•° */
+    /* Ñ¡È¡Èı¸öºòÑ¡ÔªËØµÄÖĞÎ»Êı */
     static int medianThree(vector<int> &nums, int left, int mid, int right) {
         int l = nums[left], m = nums[mid], r = nums[right];
         if ((l <= m && m <= r) || (r <= m && m <= l))
-            return mid; // m åœ¨ l å’Œ r ä¹‹é—´
+            return mid; // m ÔÚ l ºÍ r Ö®¼ä
         if ((m <= l && l <= r) || (r <= l && l <= m))
-            return left; // l åœ¨ m å’Œ r ä¹‹é—´
+            return left; // l ÔÚ m ºÍ r Ö®¼ä
         return right;
     }
 
-    /* å“¨å…µåˆ’åˆ†ï¼ˆä¸‰æ•°å–ä¸­å€¼ï¼‰ */
+    /* ÉÚ±ø»®·Ö£¨ÈıÊıÈ¡ÖĞÖµ£© */
     static int partition(vector<int> &nums, int left, int right) {
-        // é€‰å–ä¸‰ä¸ªå€™é€‰å…ƒç´ çš„ä¸­ä½æ•°
+        // Ñ¡È¡Èı¸öºòÑ¡ÔªËØµÄÖĞÎ»Êı
         int med = medianThree(nums, left, (left + right) / 2, right);
-        // å°†ä¸­ä½æ•°äº¤æ¢è‡³æ•°ç»„æœ€å·¦ç«¯
+        // ½«ÖĞÎ»Êı½»»»ÖÁÊı×é×î×ó¶Ë
         swap(nums, left, med);
-        // ä»¥ nums[left] ä¸ºåŸºå‡†æ•°
+        // ÒÔ nums[left] Îª»ù×¼Êı
         int i = left, j = right;
         while (i < j) {
             while (i < j && nums[j] >= nums[left])
-                j--; // ä»å³å‘å·¦æ‰¾é¦–ä¸ªå°äºåŸºå‡†æ•°çš„å…ƒç´ 
+                j--; // ´ÓÓÒÏò×óÕÒÊ×¸öĞ¡ÓÚ»ù×¼ÊıµÄÔªËØ
             while (i < j && nums[i] <= nums[left])
-                i++;          // ä»å·¦å‘å³æ‰¾é¦–ä¸ªå¤§äºåŸºå‡†æ•°çš„å…ƒç´ 
-            swap(nums, i, j); // äº¤æ¢è¿™ä¸¤ä¸ªå…ƒç´ 
+                i++;          // ´Ó×óÏòÓÒÕÒÊ×¸ö´óÓÚ»ù×¼ÊıµÄÔªËØ
+            swap(nums, i, j); // ½»»»ÕâÁ½¸öÔªËØ
         }
-        swap(nums, i, left); // å°†åŸºå‡†æ•°äº¤æ¢è‡³ä¸¤å­æ•°ç»„çš„åˆ†ç•Œçº¿
-        return i;            // è¿”å›åŸºå‡†æ•°çš„ç´¢å¼•
+        swap(nums, i, left); // ½«»ù×¼Êı½»»»ÖÁÁ½×ÓÊı×éµÄ·Ö½çÏß
+        return i;            // ·µ»Ø»ù×¼ÊıµÄË÷Òı
     }
 
-  public:
-    /* å¿«é€Ÿæ’åº */
+public:
+    /* ¿ìËÙÅÅĞò */
     static void quickSort(vector<int> &nums, int left, int right) {
-        // å­æ•°ç»„é•¿åº¦ä¸º 1 æ—¶ç»ˆæ­¢é€’å½’
+        // ×ÓÊı×é³¤¶ÈÎª 1 Ê±ÖÕÖ¹µİ¹é
         if (left >= right)
             return;
-        // å“¨å…µåˆ’åˆ†
+        // ÉÚ±ø»®·Ö
         int pivot = partition(nums, left, right);
-        // é€’å½’å·¦å­æ•°ç»„ã€å³å­æ•°ç»„
+        // µİ¹é×ó×ÓÊı×é¡¢ÓÒ×ÓÊı×é
         quickSort(nums, left, pivot - 1);
         quickSort(nums, pivot + 1, right);
     }
 };
 
-/* å¿«é€Ÿæ’åºç±»ï¼ˆå°¾é€’å½’ä¼˜åŒ–ï¼‰ */
+/* ¿ìËÙÅÅĞòÀà£¨Î²µİ¹éÓÅ»¯£© */
 class QuickSortTailCall {
-  private:
-    /* å…ƒç´ äº¤æ¢ */
+private:
+    /* ÔªËØ½»»» */
     static void swap(vector<int> &nums, int i, int j) {
         int tmp = nums[i];
         nums[i] = nums[j];
         nums[j] = tmp;
     }
 
-    /* å“¨å…µåˆ’åˆ† */
+    /* ÉÚ±ø»®·Ö */
     static int partition(vector<int> &nums, int left, int right) {
-        // ä»¥ nums[left] ä¸ºåŸºå‡†æ•°
+        // ÒÔ nums[left] Îª»ù×¼Êı
         int i = left, j = right;
         while (i < j) {
             while (i < j && nums[j] >= nums[left])
-                j--; // ä»å³å‘å·¦æ‰¾é¦–ä¸ªå°äºåŸºå‡†æ•°çš„å…ƒç´ 
+                j--; // ´ÓÓÒÏò×óÕÒÊ×¸öĞ¡ÓÚ»ù×¼ÊıµÄÔªËØ
             while (i < j && nums[i] <= nums[left])
-                i++;          // ä»å·¦å‘å³æ‰¾é¦–ä¸ªå¤§äºåŸºå‡†æ•°çš„å…ƒç´ 
-            swap(nums, i, j); // äº¤æ¢è¿™ä¸¤ä¸ªå…ƒç´ 
+                i++;          // ´Ó×óÏòÓÒÕÒÊ×¸ö´óÓÚ»ù×¼ÊıµÄÔªËØ
+            swap(nums, i, j); // ½»»»ÕâÁ½¸öÔªËØ
         }
-        swap(nums, i, left); // å°†åŸºå‡†æ•°äº¤æ¢è‡³ä¸¤å­æ•°ç»„çš„åˆ†ç•Œçº¿
-        return i;            // è¿”å›åŸºå‡†æ•°çš„ç´¢å¼•
+        swap(nums, i, left); // ½«»ù×¼Êı½»»»ÖÁÁ½×ÓÊı×éµÄ·Ö½çÏß
+        return i;            // ·µ»Ø»ù×¼ÊıµÄË÷Òı
     }
 
-  public:
-    /* å¿«é€Ÿæ’åºï¼ˆå°¾é€’å½’ä¼˜åŒ–ï¼‰ */
+public:
+    /* ¿ìËÙÅÅĞò£¨Î²µİ¹éÓÅ»¯£© */
     static void quickSort(vector<int> &nums, int left, int right) {
-        // å­æ•°ç»„é•¿åº¦ä¸º 1 æ—¶ç»ˆæ­¢
+        // ×ÓÊı×é³¤¶ÈÎª 1 Ê±ÖÕÖ¹
         while (left < right) {
-            // å“¨å…µåˆ’åˆ†æ“ä½œ
+            // ÉÚ±ø»®·Ö²Ù×÷
             int pivot = partition(nums, left, right);
-            // å¯¹ä¸¤ä¸ªå­æ•°ç»„ä¸­è¾ƒçŸ­çš„é‚£ä¸ªæ‰§è¡Œå¿«é€Ÿæ’åº
+            // ¶ÔÁ½¸ö×ÓÊı×éÖĞ½Ï¶ÌµÄÄÇ¸öÖ´ĞĞ¿ìËÙÅÅĞò
             if (pivot - left < right - pivot) {
-                quickSort(nums, left, pivot - 1); // é€’å½’æ’åºå·¦å­æ•°ç»„
-                left = pivot + 1;                 // å‰©ä½™æœªæ’åºåŒºé—´ä¸º [pivot + 1, right]
+                quickSort(nums, left, pivot - 1); // µİ¹éÅÅĞò×ó×ÓÊı×é
+                left = pivot + 1;                 // Ê£ÓàÎ´ÅÅĞòÇø¼äÎª [pivot + 1, right]
             } else {
-                quickSort(nums, pivot + 1, right); // é€’å½’æ’åºå³å­æ•°ç»„
-                right = pivot - 1;                 // å‰©ä½™æœªæ’åºåŒºé—´ä¸º [left, pivot - 1]
+                quickSort(nums, pivot + 1, right); // µİ¹éÅÅĞòÓÒ×ÓÊı×é
+                right = pivot - 1;                 // Ê£ÓàÎ´ÅÅĞòÇø¼äÎª [left, pivot - 1]
             }
         }
     }
@@ -144,22 +144,22 @@ class QuickSortTailCall {
 
 /* Driver Code */
 int main() {
-    /* å¿«é€Ÿæ’åº */
+    /* ¿ìËÙÅÅĞò */
     vector<int> nums{2, 4, 1, 0, 3, 5};
     QuickSort::quickSort(nums, 0, nums.size() - 1);
-    cout << "å¿«é€Ÿæ’åºå®Œæˆå nums = ";
+    cout << "¿ìËÙÅÅĞòÍê³Éºó nums = ";
     printVector(nums);
 
-    /* å¿«é€Ÿæ’åºï¼ˆä¸­ä½åŸºå‡†æ•°ä¼˜åŒ–ï¼‰ */
+    /* ¿ìËÙÅÅĞò£¨ÖĞÎ»»ù×¼ÊıÓÅ»¯£© */
     vector<int> nums1 = {2, 4, 1, 0, 3, 5};
     QuickSortMedian::quickSort(nums1, 0, nums1.size() - 1);
-    cout << "å¿«é€Ÿæ’åºï¼ˆä¸­ä½åŸºå‡†æ•°ä¼˜åŒ–ï¼‰å®Œæˆå nums = ";
+    cout << "¿ìËÙÅÅĞò£¨ÖĞÎ»»ù×¼ÊıÓÅ»¯£©Íê³Éºó nums = ";
     printVector(nums);
 
-    /* å¿«é€Ÿæ’åºï¼ˆå°¾é€’å½’ä¼˜åŒ–ï¼‰ */
+    /* ¿ìËÙÅÅĞò£¨Î²µİ¹éÓÅ»¯£© */
     vector<int> nums2 = {2, 4, 1, 0, 3, 5};
     QuickSortTailCall::quickSort(nums2, 0, nums2.size() - 1);
-    cout << "å¿«é€Ÿæ’åºï¼ˆå°¾é€’å½’ä¼˜åŒ–ï¼‰å®Œæˆå nums = ";
+    cout << "¿ìËÙÅÅĞò£¨Î²µİ¹éÓÅ»¯£©Íê³Éºó nums = ";
     printVector(nums);
 
     return 0;

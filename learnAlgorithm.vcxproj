@@ -137,9 +137,7 @@
     <ClCompile Include="datastructure\SeqStack.cpp" />
     <ClCompile Include="datastructure\XString.cpp" />
     <ClCompile Include="datastructure\HashTable.cpp" />
-    <ClCompile Include="helloAlg\chapter_heap\my_heap.cpp" />
-    <ClCompile Include="leetcode\main.cpp" />
-    <ClCompile Include="leetcode\Simple.cpp" />
+    <ClCompile Include="helloAlg\chapter_sorting\quick_sort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm\UtilSort.h" />
@@ -161,7 +159,6 @@
     <ClInclude Include="helloAlg\utils\print_utils.hpp" />
     <ClInclude Include="helloAlg\utils\tree_node.hpp" />
     <ClInclude Include="helloAlg\utils\vertex.hpp" />
-    <ClInclude Include="leetcode\Simple.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
