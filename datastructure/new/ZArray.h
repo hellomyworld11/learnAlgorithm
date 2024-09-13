@@ -3,7 +3,7 @@
 #include <assert.h>
 
 #define BUFSIZE 64
-
+//数组实现
 //数组类
 class ZArray
 {
