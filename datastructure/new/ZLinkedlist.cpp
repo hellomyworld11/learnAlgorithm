@@ -1,6 +1,5 @@
 #include "ZLinkedlist.h"
-#include <stdarg.h>
-#include <iostream>
+#include "util.h"
 
 ListNode* listCreate(int num, ...)
 {

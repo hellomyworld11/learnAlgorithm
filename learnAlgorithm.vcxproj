@@ -124,16 +124,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="algorithm\UtilSort.cpp" />
+    <ClCompile Include="datastructure\new\ArrayStack.cpp" />
     <ClCompile Include="datastructure\new\main.cpp" />
     <ClCompile Include="datastructure\new\ZArray.cpp" />
     <ClCompile Include="datastructure\new\ZLinkedlist.cpp" />
-    <ClCompile Include="ZList.cpp" />
+    <ClCompile Include="datastructure\new\LinkedListStack.cpp" />
+    <ClCompile Include="datastructure\new\ZList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm\UtilSort.h" />
+    <ClInclude Include="datastructure\new\ArrayStack.h" />
     <ClInclude Include="datastructure\new\ZArray.h" />
     <ClInclude Include="datastructure\new\ZLinkedlist.h" />
-    <ClInclude Include="ZList.h" />
+    <ClInclude Include="datastructure\new\LinkedListStack.h" />
+    <ClInclude Include="datastructure\new\ZList.h" />
+    <ClInclude Include="datastructure\new\util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
