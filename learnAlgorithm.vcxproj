@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="algorithm\UtilSort.cpp" />
+    <ClCompile Include="datastructure\new\ArrayDeque.cpp" />
     <ClCompile Include="datastructure\new\ArrayQueue.cpp" />
     <ClCompile Include="datastructure\new\ArrayStack.cpp" />
     <ClCompile Include="datastructure\new\main.cpp" />
@@ -132,9 +133,11 @@
     <ClCompile Include="datastructure\new\LinkedListStack.cpp" />
     <ClCompile Include="datastructure\new\ZList.cpp" />
     <ClCompile Include="datastructure\new\LinkerListQueue.cpp" />
+    <ClCompile Include="datastructure\new\LinkedlistDeque.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm\UtilSort.h" />
+    <ClInclude Include="datastructure\new\ArrayDeque.h" />
     <ClInclude Include="datastructure\new\ArrayQueue.h" />
     <ClInclude Include="datastructure\new\ArrayStack.h" />
     <ClInclude Include="datastructure\new\ZArray.h" />
@@ -143,6 +146,7 @@
     <ClInclude Include="datastructure\new\ZList.h" />
     <ClInclude Include="datastructure\new\util.h" />
     <ClInclude Include="datastructure\new\LinkerListQueue.h" />
+    <ClInclude Include="datastructure\new\LinkedlistDeque.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

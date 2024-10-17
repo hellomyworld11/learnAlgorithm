@@ -4,6 +4,8 @@
 #include "ArrayStack.h"
 #include "LinkerListQueue.h"
 #include "ArrayQueue.h"
+#include "LinkedlistDeque.h"
+#include "ArrayDeque.h"
 
 int main(int argc, char **argv)
 {
@@ -13,7 +15,9 @@ int main(int argc, char **argv)
 	//ArrayStack::test();
 
 	//LinkerListQueue::test();
-	ArrayQueue::test();
+	//ArrayQueue::test();
+	//LinkedlistDeque::test();
+	ArrayDeque::test();
 
 	getchar();
 	return 0;
