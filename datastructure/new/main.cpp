@@ -6,6 +6,7 @@
 #include "ArrayQueue.h"
 #include "LinkedlistDeque.h"
 #include "ArrayDeque.h"
+#include "ArrayHashMap.h"
 
 int main(int argc, char **argv)
 {
@@ -17,7 +18,8 @@ int main(int argc, char **argv)
 	//LinkerListQueue::test();
 	//ArrayQueue::test();
 	//LinkedlistDeque::test();
-	ArrayDeque::test();
+	//ArrayDeque::test();
+	ArrayHashMap::test();
 
 	getchar();
 	return 0;
