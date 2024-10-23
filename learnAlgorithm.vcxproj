@@ -136,6 +136,7 @@
     <ClCompile Include="datastructure\new\LinkerListQueue.cpp" />
     <ClCompile Include="datastructure\new\LinkedlistDeque.cpp" />
     <ClCompile Include="datastructure\new\HashMapChaining.cpp" />
+    <ClCompile Include="datastructure\new\HashMapOpenAddressing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm\UtilSort.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="datastructure\new\LinkerListQueue.h" />
     <ClInclude Include="datastructure\new\LinkedlistDeque.h" />
     <ClInclude Include="datastructure\new\HashMapChaining.h" />
+    <ClInclude Include="datastructure\new\HashMapOpenAddressing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

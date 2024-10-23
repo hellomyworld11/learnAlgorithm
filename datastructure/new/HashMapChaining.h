@@ -20,6 +20,10 @@ public:
 	void remove(int key);
 
 	void extend();
+
+	void print();
+
+	static void test();
 private:
 	int size_;
 	int capacity_;

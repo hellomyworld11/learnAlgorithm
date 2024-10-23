@@ -7,6 +7,8 @@
 #include "LinkedlistDeque.h"
 #include "ArrayDeque.h"
 #include "ArrayHashMap.h"
+#include "HashMapChaining.h"
+#include "HashMapOpenAddressing.h"
 
 int main(int argc, char **argv)
 {
@@ -19,7 +21,9 @@ int main(int argc, char **argv)
 	//ArrayQueue::test();
 	//LinkedlistDeque::test();
 	//ArrayDeque::test();
-	ArrayHashMap::test();
+	//ArrayHashMap::test();
+	//HashMapChaining::test();
+	HashMapOpenAddressing::test();
 
 	getchar();
 	return 0;
