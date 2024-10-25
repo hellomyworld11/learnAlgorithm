@@ -129,6 +129,8 @@
     <ClCompile Include="datastructure\new\ArrayQueue.cpp" />
     <ClCompile Include="datastructure\new\ArrayStack.cpp" />
     <ClCompile Include="datastructure\new\main.cpp" />
+    <ClCompile Include="datastructure\new\tree\binary_tree.cpp" />
+    <ClCompile Include="datastructure\new\tree\binary_tree.h" />
     <ClCompile Include="datastructure\new\ZArray.cpp" />
     <ClCompile Include="datastructure\new\ZLinkedlist.cpp" />
     <ClCompile Include="datastructure\new\LinkedListStack.cpp" />
