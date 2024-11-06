@@ -4,24 +4,28 @@
 #include "../util.h"
 
 
-//二叉树节点
-struct TreeNode {
-	int val;
-	int height;
-	TreeNode *parent = nullptr;
-	TreeNode *left = nullptr;
-	TreeNode *right = nullptr;
-	TreeNode() = default;
-	explicit TreeNode(int x, TreeNode *parent = nullptr) :val(x), parent(parent) {}
-};
+
+/* 释放二叉树内存 */
+void freeTree(TreeNode *root);
 
 
 //层序遍历
 vector<int> levelOrder(TreeNode *root);
+//前序
+void preOrder(TreeNode *root);
+
+vector<int> preOrderIterative(TreeNode *root);
+
+//中序
+void inOrder(TreeNode *root);
+//后序
+void postOrder(TreeNode *root);
+
+
+extern void test1();
 
 
 
-
-#endif =
+#endif 
 
 

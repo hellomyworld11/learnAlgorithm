@@ -124,13 +124,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="algorithm\UtilSort.cpp" />
+    <ClCompile Include="datastructure\new\tree\BinarySearchTree.cpp" />
+    <ClCompile Include="datastructure\new\tree\ArrayBinaryTree.cpp" />
     <ClCompile Include="datastructure\new\ArrayHashMap.cpp" />
     <ClCompile Include="datastructure\new\ArrayDeque.cpp" />
     <ClCompile Include="datastructure\new\ArrayQueue.cpp" />
     <ClCompile Include="datastructure\new\ArrayStack.cpp" />
     <ClCompile Include="datastructure\new\main.cpp" />
     <ClCompile Include="datastructure\new\tree\binary_tree.cpp" />
-    <ClCompile Include="datastructure\new\tree\binary_tree.h" />
     <ClCompile Include="datastructure\new\ZArray.cpp" />
     <ClCompile Include="datastructure\new\ZLinkedlist.cpp" />
     <ClCompile Include="datastructure\new\LinkedListStack.cpp" />
@@ -142,10 +143,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm\UtilSort.h" />
+    <ClInclude Include="datastructure\new\tree\BinarySearchTree.h" />
+    <ClInclude Include="datastructure\new\tree\ArrayBinaryTree.h" />
     <ClInclude Include="datastructure\new\ArrayHashMap.h" />
     <ClInclude Include="datastructure\new\ArrayDeque.h" />
     <ClInclude Include="datastructure\new\ArrayQueue.h" />
     <ClInclude Include="datastructure\new\ArrayStack.h" />
+    <ClInclude Include="datastructure\new\tree\binary_tree.h" />
     <ClInclude Include="datastructure\new\ZArray.h" />
     <ClInclude Include="datastructure\new\ZLinkedlist.h" />
     <ClInclude Include="datastructure\new\LinkedListStack.h" />
