@@ -1,5 +1,5 @@
 #include "ArrayQueue.h"
-#include "util.h"
+#include "../util.h"
 
 
 ArrayQueue::ArrayQueue(int capacity):capacity_(capacity)

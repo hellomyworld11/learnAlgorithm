@@ -71,7 +71,6 @@ void BinarySearchTree::insert(int num)
 	
 }
 
-
 void BinarySearchTree::remove(int num)
 {
 	if (root_ == nullptr)

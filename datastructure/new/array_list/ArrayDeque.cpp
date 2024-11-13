@@ -1,6 +1,6 @@
 #include "ArrayDeque.h"
 #include <iostream>
-#include "util.h"
+#include "../util.h"
 
 ArrayDeque::ArrayDeque(int capacity)
 {

@@ -1,6 +1,5 @@
 #include "ZList.h"
-
-#include "util.h"
+#include "../util.h"
 
 ZList::ZList()
 {

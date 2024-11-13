@@ -1,5 +1,5 @@
 #include "LinkedListStack.h"
-#include "util.h"
+#include "../util.h"
 
 LinkedListStack::LinkedListStack()
 	:stackTop_(nullptr),

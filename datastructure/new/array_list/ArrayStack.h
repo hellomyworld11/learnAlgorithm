@@ -1,6 +1,6 @@
 #pragma once
 
-#include "util.h"
+#include "../util.h"
 
 
 //数组实现的栈

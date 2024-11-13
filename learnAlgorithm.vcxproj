@@ -124,41 +124,43 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="algorithm\UtilSort.cpp" />
+    <ClCompile Include="datastructure\new\tree\AVLTree.cpp" />
     <ClCompile Include="datastructure\new\tree\BinarySearchTree.cpp" />
     <ClCompile Include="datastructure\new\tree\ArrayBinaryTree.cpp" />
-    <ClCompile Include="datastructure\new\ArrayHashMap.cpp" />
-    <ClCompile Include="datastructure\new\ArrayDeque.cpp" />
-    <ClCompile Include="datastructure\new\ArrayQueue.cpp" />
-    <ClCompile Include="datastructure\new\ArrayStack.cpp" />
+    <ClCompile Include="datastructure\new\hash\ArrayHashMap.cpp" />
+    <ClCompile Include="datastructure\new\array_list\ArrayDeque.cpp" />
+    <ClCompile Include="datastructure\new\array_list\ArrayQueue.cpp" />
+    <ClCompile Include="datastructure\new\array_list\ArrayStack.cpp" />
     <ClCompile Include="datastructure\new\main.cpp" />
     <ClCompile Include="datastructure\new\tree\binary_tree.cpp" />
-    <ClCompile Include="datastructure\new\ZArray.cpp" />
-    <ClCompile Include="datastructure\new\ZLinkedlist.cpp" />
-    <ClCompile Include="datastructure\new\LinkedListStack.cpp" />
-    <ClCompile Include="datastructure\new\ZList.cpp" />
-    <ClCompile Include="datastructure\new\LinkerListQueue.cpp" />
-    <ClCompile Include="datastructure\new\LinkedlistDeque.cpp" />
-    <ClCompile Include="datastructure\new\HashMapChaining.cpp" />
-    <ClCompile Include="datastructure\new\HashMapOpenAddressing.cpp" />
+    <ClCompile Include="datastructure\new\array_list\ZArray.cpp" />
+    <ClCompile Include="datastructure\new\array_list\ZLinkedlist.cpp" />
+    <ClCompile Include="datastructure\new\array_list\LinkedListStack.cpp" />
+    <ClCompile Include="datastructure\new\array_list\ZList.cpp" />
+    <ClCompile Include="datastructure\new\array_list\LinkerListQueue.cpp" />
+    <ClCompile Include="datastructure\new\array_list\LinkedlistDeque.cpp" />
+    <ClCompile Include="datastructure\new\hash\HashMapChaining.cpp" />
+    <ClCompile Include="datastructure\new\hash\HashMapOpenAddressing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm\UtilSort.h" />
+    <ClInclude Include="datastructure\new\tree\AVLTree.h" />
     <ClInclude Include="datastructure\new\tree\BinarySearchTree.h" />
     <ClInclude Include="datastructure\new\tree\ArrayBinaryTree.h" />
-    <ClInclude Include="datastructure\new\ArrayHashMap.h" />
-    <ClInclude Include="datastructure\new\ArrayDeque.h" />
-    <ClInclude Include="datastructure\new\ArrayQueue.h" />
-    <ClInclude Include="datastructure\new\ArrayStack.h" />
+    <ClInclude Include="datastructure\new\hash\ArrayHashMap.h" />
+    <ClInclude Include="datastructure\new\array_list\ArrayDeque.h" />
+    <ClInclude Include="datastructure\new\array_list\ArrayQueue.h" />
+    <ClInclude Include="datastructure\new\array_list\ArrayStack.h" />
     <ClInclude Include="datastructure\new\tree\binary_tree.h" />
-    <ClInclude Include="datastructure\new\ZArray.h" />
-    <ClInclude Include="datastructure\new\ZLinkedlist.h" />
-    <ClInclude Include="datastructure\new\LinkedListStack.h" />
-    <ClInclude Include="datastructure\new\ZList.h" />
+    <ClInclude Include="datastructure\new\array_list\ZArray.h" />
+    <ClInclude Include="datastructure\new\array_list\ZLinkedlist.h" />
+    <ClInclude Include="datastructure\new\array_list\LinkedListStack.h" />
+    <ClInclude Include="datastructure\new\array_list\ZList.h" />
     <ClInclude Include="datastructure\new\util.h" />
-    <ClInclude Include="datastructure\new\LinkerListQueue.h" />
-    <ClInclude Include="datastructure\new\LinkedlistDeque.h" />
-    <ClInclude Include="datastructure\new\HashMapChaining.h" />
-    <ClInclude Include="datastructure\new\HashMapOpenAddressing.h" />
+    <ClInclude Include="datastructure\new\array_list\LinkerListQueue.h" />
+    <ClInclude Include="datastructure\new\array_list\LinkedlistDeque.h" />
+    <ClInclude Include="datastructure\new\hash\HashMapChaining.h" />
+    <ClInclude Include="datastructure\new\hash\HashMapOpenAddressing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
