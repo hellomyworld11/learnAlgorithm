@@ -12,6 +12,7 @@
 #include "tree/binary_tree.h"
 #include "tree/ArrayBinaryTree.h"
 #include "tree/BinarySearchTree.h"
+#include "tree/AVLTree.h"
 
 int main(int argc, char **argv)
 {
@@ -29,7 +30,8 @@ int main(int argc, char **argv)
 
 	//test1();
 	//ArrayBinaryTree::test();
-	BinarySearchTree::test();
+	//BinarySearchTree::test();
+	AVLTree::test();
 
 	getchar();
 	return 0;

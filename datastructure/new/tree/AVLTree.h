@@ -11,6 +11,8 @@ public:
 
 	~AVLTree();
 
+	static void test();
+
 public:
 	int height(TreeNode *node);
 
@@ -21,9 +23,11 @@ public:
 	void remove(int val);
 
 	TreeNode* search(int val);
+	
+	TreeNode* root();
 private:
 	void updateHeight(TreeNode* node);
-	//旋转
+	//旋转 重点掌握
 	TreeNode* rotate(TreeNode *node);
 
 	TreeNode* rightRotate(TreeNode *node);
