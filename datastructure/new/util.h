@@ -8,6 +8,7 @@
 #include <queue>
 #include <stack>
 #include <string>
+#include<functional>  //½â¾ögreater±àÒë±¨´í
 
 using namespace std;
 
@@ -28,7 +29,7 @@ template <typename T>
 void printVector(vector<T> list)
 {
 	cout << "[";
-	for (const auto v : list )
+	for (const auto &v : list )
 	{
 		if (&v != &list[0])
 		{

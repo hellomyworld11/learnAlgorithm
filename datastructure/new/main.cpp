@@ -13,6 +13,7 @@
 #include "tree/ArrayBinaryTree.h"
 #include "tree/BinarySearchTree.h"
 #include "tree/AVLTree.h"
+#include "heap/Heap.h"
 
 int main(int argc, char **argv)
 {
@@ -31,7 +32,8 @@ int main(int argc, char **argv)
 	//test1();
 	//ArrayBinaryTree::test();
 	//BinarySearchTree::test();
-	AVLTree::test();
+	//AVLTree::test();
+	Heap::test_topk();
 
 	getchar();
 	return 0;
