@@ -14,6 +14,7 @@
 #include "tree/BinarySearchTree.h"
 #include "tree/AVLTree.h"
 #include "heap/Heap.h"
+#include "graph/GraphAdjMat.h"
 
 int main(int argc, char **argv)
 {
@@ -33,7 +34,8 @@ int main(int argc, char **argv)
 	//ArrayBinaryTree::test();
 	//BinarySearchTree::test();
 	//AVLTree::test();
-	Heap::test_topk();
+	//Heap::test_topk();
+	GraphAdjMat::test();
 
 	getchar();
 	return 0;

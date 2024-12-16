@@ -142,6 +142,8 @@
     <ClCompile Include="datastructure\new\hash\HashMapChaining.cpp" />
     <ClCompile Include="datastructure\new\hash\HashMapOpenAddressing.cpp" />
     <ClCompile Include="datastructure\new\heap\Heap.cpp" />
+    <ClCompile Include="datastructure\new\graph\GraphAdjMat.cpp" />
+    <ClCompile Include="datastructure\new\graph\GraphAdjList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm\UtilSort.h" />
@@ -163,6 +165,8 @@
     <ClInclude Include="datastructure\new\hash\HashMapChaining.h" />
     <ClInclude Include="datastructure\new\hash\HashMapOpenAddressing.h" />
     <ClInclude Include="datastructure\new\heap\Heap.h" />
+    <ClInclude Include="datastructure\new\graph\GraphAdjMat.h" />
+    <ClInclude Include="datastructure\new\graph\GraphAdjList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
