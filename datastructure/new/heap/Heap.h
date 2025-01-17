@@ -1,14 +1,14 @@
 #pragma once
 #include "../util.h"
 
-//堆
+//堆  
 class Heap
 {
 public:
 	enum class Type
 	{	
-		Max,
-		Min
+		Max,   //最大堆
+		Min    //最小堆
 	};
 
 	Heap(Type type, vector<int> nums);
@@ -45,6 +45,7 @@ public:
 
 	//应用
 	static void test_topk();
+
 	static priority_queue<int, vector<int>, greater<int>> topKHeap(vector<int> &nums, int k);
 private:
 	void swap(int i, int j);

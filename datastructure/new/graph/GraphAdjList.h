@@ -1,7 +1,8 @@
 #pragma once
 
-#include "util.h"
+#include "../util.h"
 
+//邻接表
 class GraphAdjList
 {
 public:
@@ -26,10 +27,25 @@ public:
 
 	void removeVertex(Vertex* vet);
 
+	void removeVertex(vector<Vertex*>& vets, Vertex * vet);
+
 	void print();
 
-private:
-	void removeVertex(vector<Vertex*> vets, Vertex* vet);
+	static void test();
+
+	static void test_bfs();
+
+	static void test_dfs();
+
+	//广度优先遍历
+	vector<Vertex *> graphBFS(Vertex* startVet);
+
+	vector<Vertex *> graphDFS(Vertex* startVet);
+
+	void dfs(unordered_set<Vertex*>& visited, vector<Vertex*>& res, Vertex *vet);
+
+//	void graphDFS();
+
 public:
 	unordered_map<Vertex*, vector<Vertex*>> adjList_;
 };

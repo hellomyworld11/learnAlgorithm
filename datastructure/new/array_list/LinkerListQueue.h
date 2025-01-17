@@ -1,6 +1,7 @@
 #pragma once
 #include "ZLinkedlist.h"
 
+//链表实现的队列
 class LinkerListQueue
 {
 public:

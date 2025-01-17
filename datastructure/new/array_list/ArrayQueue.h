@@ -1,7 +1,7 @@
 #pragma once
 
 
-
+//数组实现的队列
 class ArrayQueue
 {
 public:
