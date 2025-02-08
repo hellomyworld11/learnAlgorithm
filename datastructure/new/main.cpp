@@ -16,6 +16,7 @@
 #include "heap/Heap.h"
 #include "graph/GraphAdjMat.h"
 #include "graph/GraphAdjList.h"
+#include "searching/Searching.h"
 
 int main(int argc, char **argv)
 {
@@ -39,7 +40,8 @@ int main(int argc, char **argv)
 	//GraphAdjMat::test();
 	//GraphAdjList::test();
 	//GraphAdjList::test_bfs();
-	GraphAdjList::test_dfs();
+	//GraphAdjList::test_dfs();
+	CSearching::test();
 
 	getchar();
 	return 0;
