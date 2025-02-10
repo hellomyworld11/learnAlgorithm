@@ -13,8 +13,10 @@ public:
 	int binarySearch(vector<int>& nums, int target);
 
 	//二分法 查找数插入到数组中的索引
-	int binarySearcnInsertion(vector<int>& nums, int target);
+	int binarySearchInsertion(vector<int>& nums, int target);
 
+	//二分法 重复元素 查找最左边的目标索引
+	int binarySearchInsertionRepeat(vector<int>& nums, int target);
 
 	static void test();
 };

@@ -37,7 +37,7 @@ int CSearching::binarySearch(vector<int>& nums, int target)
 	return -1;
 }
 
-int CSearching::binarySearcnInsertion(vector<int>& nums, int target)
+int CSearching::binarySearchInsertion(vector<int>& nums, int target)
 {
 	int i = 0;
 	int j = nums.size() - 1;
@@ -58,6 +58,11 @@ int CSearching::binarySearcnInsertion(vector<int>& nums, int target)
 		}
 	}
 	return i;
+}
+
+int CSearching::binarySearchInsertionRepeat(vector<int>& nums, int target)
+{
+
 }
 
 void CSearching::test()
