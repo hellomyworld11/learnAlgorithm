@@ -62,7 +62,24 @@ int CSearching::binarySearchInsertion(vector<int>& nums, int target)
 
 int CSearching::binarySearchInsertionRepeat(vector<int>& nums, int target)
 {
-
+	int i = 0;
+	int j = nums.size() - 1;
+	while (i <= j)
+	{
+		int m = i + (j - i) / 2.0f;
+		if (nums[m] > target)
+		{
+			j = m - 1;
+		}
+		else if (nums[m] < target)
+		{		
+			i = m + 1;
+		}
+		else {
+			j = m - 1;
+		}
+	}
+	return i;
 }
 
 void CSearching::test()
