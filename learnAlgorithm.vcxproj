@@ -145,6 +145,7 @@
     <ClCompile Include="datastructure\new\graph\GraphAdjMat.cpp" />
     <ClCompile Include="datastructure\new\graph\GraphAdjList.cpp" />
     <ClCompile Include="datastructure\new\searching\Searching.cpp" />
+    <ClCompile Include="datastructure\new\sort\Sort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm\UtilSort.h" />
@@ -169,6 +170,7 @@
     <ClInclude Include="datastructure\new\graph\GraphAdjMat.h" />
     <ClInclude Include="datastructure\new\graph\GraphAdjList.h" />
     <ClInclude Include="datastructure\new\searching\Searching.h" />
+    <ClInclude Include="datastructure\new\sort\Sort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

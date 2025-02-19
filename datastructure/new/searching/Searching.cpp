@@ -82,15 +82,39 @@ int CSearching::binarySearchInsertionRepeat(vector<int>& nums, int target)
 	return i;
 }
 
+std::vector<int> CSearching::getAddEleForTarget(vector<int>& nums, int target)
+{
+	//1. 暴力方法，耗时
+// 	vector<int> res;
+// 	for (int i = 0; i < nums.size(); i++)
+// 	{
+// 		for (int j = i+1; j < nums.size(); j++)
+// 		{
+// 			if ((nums[i] + nums[j]) == target )
+// 			{
+// 				return{i, j};
+// 			}
+// 		}
+// 	}
+
+	//对应 leetcode  两数之和 使用哈希表存储差值
+	unordered_map<int, int> map;
+	for (int i = 0; i < nums.size(); i++)
+	{
+		if (map.find(target - nums[i]) != map.end())
+		{
+			return{i, map[target-nums[i]]};
+		}
+		map.emplace(nums[i], i);
+	}
+
+	return {};
+}
+
 void CSearching::test()
 {
 	CSearching searching;
-	vector<int> nums = {0, 1, 2, 3, 5, 6, 7, 8};
-	int index = searching.binarySearch(nums, 4);
-	cout << "vector: = " << index << endl;
-	printVector(nums);
-	cout << "find index: = " << index << endl;
-
-	int insertindex = searching.binarySearcnInsertion(nums, 4);
-	cout << "insert 4 index: = " << insertindex << endl;
+	vector<int> nums = {2, 7, 11, 15};
+	vector<int> res =  searching.getAddEleForTarget(nums, 13);
+	printVector(res);
 }

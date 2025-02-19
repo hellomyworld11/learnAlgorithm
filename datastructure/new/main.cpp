@@ -17,6 +17,7 @@
 #include "graph/GraphAdjMat.h"
 #include "graph/GraphAdjList.h"
 #include "searching/Searching.h"
+#include "sort/Sort.h"
 
 int main(int argc, char **argv)
 {
@@ -41,7 +42,8 @@ int main(int argc, char **argv)
 	//GraphAdjList::test();
 	//GraphAdjList::test_bfs();
 	//GraphAdjList::test_dfs();
-	CSearching::test();
+	//CSearching::test();
+	CSort::test();
 
 	getchar();
 	return 0;
