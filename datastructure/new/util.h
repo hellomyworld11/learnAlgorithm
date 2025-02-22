@@ -11,6 +11,7 @@
 #include<functional>  //解决greater编译报错
 #include <unordered_map>
 #include <unordered_set>
+#include <time.h>
 
 using namespace std;
 
@@ -42,3 +43,14 @@ void printVector(vector<T> list)
 	cout << "]\n";
 }
 
+//生成随机数组 
+inline void generateNums(int n, vector<int>& nums)
+{
+	unsigned int range = 100; 
+	srand(time(0));
+
+	for (int i = 0; i < n; i++)
+	{
+		nums.push_back(rand() % range);
+	}
+}
