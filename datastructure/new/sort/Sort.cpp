@@ -10,10 +10,11 @@ void CSort::test()
 	//sort.selectSort(nums);
 	//sort.bubbleSort(nums);
 	vector<int> nums;
-	generateNums(10000, nums);
+	generateNums(20, nums);
 	printVector(nums);
 	cout << "-----------" << endl;
-	sort.insertSort(nums);
+	//sort.insertSort(nums);
+	sort.quickSort(nums, 0, nums.size()-1);
 	printVector(nums);
 }
 
@@ -96,6 +97,9 @@ void CSort::insertSort(vector<int>& nums)
 // 		}
 // 	}
 
+	//1. 初始第一个数当作已排序区间， 区间后的数依次往区间中从后往前遍历比较
+	//2. 如果小于区间的数，则挪动，直到不小于为止。插入。
+	//时间复杂度 O(n2) 控件复杂度O(1)
 	int n = nums.size();
 	//外层控制轮数 比如5个数只需要4轮遍历
 	for (int i = 1; i < n ; i++)
@@ -109,5 +113,72 @@ void CSort::insertSort(vector<int>& nums)
 		}
 		nums[j + 1] = target;  
 	}
+}
+
+void CSort::quickSort(vector<int>& nums, int left, int right)
+{
+	//时间复杂度O(nlog n) : 递归层数log n  哨兵划分n
+	//空间复杂度 O(n) 栈帧空间
+	if (left >= right) //数组长度为1时中止
+	{
+		return;
+	}
+	//哨兵划分
+	int pivot = partition(nums, left, right);
+	//递归左子数组
+	quickSort(nums, left, pivot-1);
+	//递归右子数组
+	quickSort(nums, pivot + 1, right);
+}
+
+int CSort::partition(vector<int>& nums, int left, int right)
+{
+	//1. 第一个数作为基准数，j从后往前，i从前往后 如果j指向的数小于基准，
+	//2. i指向的数大于基准 交换i和j的数
+	//3. 最后交换基准和两个子数组的分界线
+	int i = left;
+	int j = right;
+	//nums[left] 作为基准数 得到左右两个区间
+	while (i < j)
+	{
+		//从右往左找首个小于基准数的元素
+		while ((i < j) && nums[j] >= nums[left])
+		{
+			j--;
+		}
+		//从左往右找首个大于基准数的元素
+		while ((i < j) && nums[i] <= nums[left])
+		{
+			i++;
+		}
+		//小于基准的和大于基准的交换
+		std::swap(nums[i], nums[j]);
+	}
+	//基准交换到分界线
+	std::swap(nums[left], nums[i]);
+	return i; //返回分界线索引
+}
+
+int CSort::partitionByMid(vector<int>& nums, int left, int right)
+{
+	//取中位数
+	int m =  medianThree(nums, left, (left + right )/ 2, right);
+	swap(nums[m], nums[left]);
+
+	partition(nums, left, right);
+}
+
+int CSort::medianThree(vector<int>& nums, int left, int mid, int right)
+{
+	int l = nums[left], m = nums[mid], r = nums[right];
+	if ((l <= m && m <= r) || (r <= m && m <= l))
+	{
+		return mid;
+	}
+	if ((m <= l && l <= r) || (r <= l && l <= m))
+	{
+		return l;
+	}
+	return r;
 }
 

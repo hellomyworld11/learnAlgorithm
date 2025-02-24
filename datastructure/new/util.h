@@ -46,11 +46,20 @@ void printVector(vector<T> list)
 //生成随机数组 
 inline void generateNums(int n, vector<int>& nums)
 {
-	unsigned int range = 100; 
-	srand(time(0));
+	
 
+	//1.随机生成法
+//	unsigned int range = 100;
+// 	srand(time(0));
+// 	for (int i = 0; i < n; i++)
+// 	{
+// 		nums.push_back(rand() % range);
+// 	}
+
+	//2. 乱序法
 	for (int i = 0; i < n; i++)
 	{
-		nums.push_back(rand() % range);
+		nums.push_back(i);
 	}
+	std::random_shuffle(nums.begin(), nums.end());
 }
