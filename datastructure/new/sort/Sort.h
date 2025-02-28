@@ -21,9 +21,15 @@ public:
 	int partition(vector<int>& nums, int left, int right);
 	//4.2 哨兵划分按中位数
 	int partitionByMid(vector<int>& nums, int left, int right);
-	
 	int medianThree(vector<int>& nums, int left, int mid, int right);
+	//4.3 尾递归优化
+	void quickSort_tail(vector<int>& nums, int left, int right);
+	
+	//5. 归并排序
+	void mergeSort(vector<int>& nums, int left, int right);
+	void merge(vector<int>& nums, int left, int mid, int right);
 
+	//6. 堆排
 	static void test();
 
 };

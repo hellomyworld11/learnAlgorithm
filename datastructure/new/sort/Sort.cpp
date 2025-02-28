@@ -10,11 +10,12 @@ void CSort::test()
 	//sort.selectSort(nums);
 	//sort.bubbleSort(nums);
 	vector<int> nums;
-	generateNums(20, nums);
+	generateNums(50, nums);
 	printVector(nums);
 	cout << "-----------" << endl;
 	//sort.insertSort(nums);
-	sort.quickSort(nums, 0, nums.size()-1);
+	//sort.quickSort(nums, 0, nums.size()-1);
+	sort.mergeSort(nums, 0, nums.size() - 1);
 	printVector(nums);
 }
 
@@ -165,7 +166,7 @@ int CSort::partitionByMid(vector<int>& nums, int left, int right)
 	int m =  medianThree(nums, left, (left + right )/ 2, right);
 	swap(nums[m], nums[left]);
 
-	partition(nums, left, right);
+	return partition(nums, left, right);
 }
 
 int CSort::medianThree(vector<int>& nums, int left, int mid, int right)
@@ -180,5 +181,73 @@ int CSort::medianThree(vector<int>& nums, int left, int mid, int right)
 		return l;
 	}
 	return r;
+}
+
+void CSort::quickSort_tail(vector<int>& nums, int left, int right)
+{
+	while (left < right)
+	{
+		int pivot = partition(nums, left, right);
+
+		//左边区间比右边小，排序左边区间进行递归。递归层数会小点
+		if (pivot - left < right - pivot)
+		{
+			quickSort_tail(nums, left, pivot - 1);
+			left = pivot + 1;  //剩余大区间 继续非递归快排
+		}
+		else {
+			quickSort_tail(nums, pivot + 1, right);
+			right = pivot - 1; //剩余大区间 继续非递归快排
+		}
+
+	}
+}
+
+void CSort::mergeSort(vector<int>& nums, int left, int right)
+{
+	//1.拆分: 不断的从中间拆分数组，直到每个子数组的个数为1
+	//2.合并: 子数组合并阶段调整顺序。
+	//时间复杂度O(nlog(n)) 空间复杂度O(n)
+
+	if (left >= right)
+	{
+		return;
+	}
+
+	int mid = left + (right - left) / 2;
+	mergeSort(nums, left, mid);
+	mergeSort(nums, mid + 1, right);
+	merge(nums, left, mid, right);
+}
+
+void CSort::merge(vector<int>& nums, int left, int mid, int right)
+{
+	int i = left;
+	int j = mid + 1;
+	vector<int> temps;
+	while ((i <= mid) && (j <= right))
+	{
+		if (nums[i] < nums[j])
+		{
+			temps.emplace_back(nums[i++]);
+		}
+		else {
+			temps.emplace_back(nums[j++]);
+		}
+	}
+
+	while (i <= mid)
+	{
+		temps.emplace_back(nums[i++]);
+	}
+	while (j <= right)
+	{
+		temps.emplace_back(nums[j++]);
+	}
+
+	for (int i = 0; i < temps.size(); i++)
+	{
+		nums[left + i] = temps[i];
+	}
 }
 
