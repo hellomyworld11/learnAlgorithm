@@ -15,7 +15,8 @@ void CSort::test()
 	cout << "-----------" << endl;
 	//sort.insertSort(nums);
 	//sort.quickSort(nums, 0, nums.size()-1);
-	sort.mergeSort(nums, 0, nums.size() - 1);
+	//sort.mergeSort(nums, 0, nums.size() - 1);
+	sort.heapSort(nums);
 	printVector(nums);
 }
 
@@ -248,6 +249,53 @@ void CSort::merge(vector<int>& nums, int left, int mid, int right)
 	for (int i = 0; i < temps.size(); i++)
 	{
 		nums[left + i] = temps[i];
+	}
+}
+
+void CSort::heapSort(vector<int>& nums)
+{
+	//1. 先建立最大堆。
+	//2. 遍历n-1轮，交换堆顶和堆底(把最大数放最后面作为已排序的区间)，堆平衡被破坏，继续从堆顶往下堆化。
+	// 时间复杂度O(nlogn) 空间O(1)
+	//建堆
+	for (int i = nums.size() / 2 - 1; i >= 0; i--)
+	{
+		siftDown(nums, nums.size(), i);
+	}
+	//从堆中提取最大元素，循环n-1轮
+	for (int i = nums.size()-1; i > 0; i--)
+	{
+		//交换最大元素和堆底，未排序区间减1
+		swap(nums[0], nums[i]);
+		//继续堆化
+		siftDown(nums, i, 0);
+	}
+}
+
+void CSort::siftDown(vector<int>& nums, int n, int i)
+{
+	while (true)
+	{
+		int l = 2 * i + 1;
+		int r = 2 * i + 2;
+		int m = i;
+
+		if (l < n && nums[l] > nums[m])
+		{
+			m = l;
+		}
+		if (r < n && nums[r] > nums[m])
+		{
+			m = r;
+		}
+		
+		if (m == i)
+		{
+			break;
+		}
+
+		swap(nums[m], nums[i]);
+		i = m;
 	}
 }
 

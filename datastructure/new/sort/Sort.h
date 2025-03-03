@@ -30,6 +30,9 @@ public:
 	void merge(vector<int>& nums, int left, int mid, int right);
 
 	//6. ╤яее
+	void heapSort(vector<int>& nums);
+	void siftDown(vector<int>& nums, int n, int i);
+
 	static void test();
 
 };
