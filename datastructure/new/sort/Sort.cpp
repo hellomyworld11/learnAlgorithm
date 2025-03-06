@@ -16,7 +16,11 @@ void CSort::test()
 	//sort.insertSort(nums);
 	//sort.quickSort(nums, 0, nums.size()-1);
 	//sort.mergeSort(nums, 0, nums.size() - 1);
-	sort.heapSort(nums);
+	//sort.heapSort(nums);
+	//vector<float> floatnums = { 0.49f, 0.96f, 0.82f, 0.09f, 0.57f, 0.43f, 0.91f, 0.75f, 0.15f, 0.37f };
+	//sort.bucketSort(floatnums);
+	sort.countingSort(nums);
+	//printVector(floatnums);
 	printVector(nums);
 }
 
@@ -297,5 +301,68 @@ void CSort::siftDown(vector<int>& nums, int n, int i)
 		swap(nums[m], nums[i]);
 		i = m;
 	}
+}
+
+void CSort::bucketSort(vector<float>& nums)
+{
+	//1. 按范围分成n个桶
+	//2. 某个范围的数放入某个桶
+	//3. 每个桶内数字排序
+	//4. 所有通数字合入成最终排好序的数组
+	//时间复杂度O(n+k) 控件O(n+k)
+
+	int k = nums.size() / 2; //分成 k个桶
+	vector<vector<float>> buckets(k);
+
+	for (float num : nums)
+	{
+		int i = num * k;  //按范围放入某个桶
+		buckets[i].push_back(num);
+	}
+
+	for (auto& bucket : buckets)
+	{//每个桶单独排序
+		std::sort(bucket.begin(), bucket.end());
+	}
+
+	//合并桶
+	int i = 0;
+	for (auto& bucket : buckets)
+	{
+		for (float num : bucket)
+		{
+			nums[i++] = num;
+		}
+	}
+}
+
+void CSort::countingSort(vector<int>& nums)
+{
+	//1. 获取数组最大数
+	//2. 从0遍历至最大数作为数组下标，值 存储这些数字的次数 
+	//3. 遍历数组依次放入nums
+	int m = 0;
+	for (auto num : nums)
+	{
+		m = std::max(num, m);
+	}
+
+	vector<int> counter(m+1, 0);
+	for (auto num : nums)
+	{
+		counter[num]++;
+	}
+
+	int k = 0;
+	for (int i = 0; i < counter.size(); i++)
+	{
+		for (int j = 0; j < counter[i]; j++)
+		{
+			nums[k++] = i;
+		}
+	}
+
+	//需要考虑 数组是对象的情况，无法决定同样值得对象哪些是前和后，所有要按照原数组来排
+
 }
 

@@ -33,6 +33,12 @@ public:
 	void heapSort(vector<int>& nums);
 	void siftDown(vector<int>& nums, int n, int i);
 
+	//7.Õ∞≈≈
+	void bucketSort(vector<float>& nums);
+
+	//8.º∆ ˝≈≈–Ú
+	void countingSort(vector<int>& nums);
+
 	static void test();
 
 };
