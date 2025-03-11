@@ -63,3 +63,20 @@ inline void generateNums(int n, vector<int>& nums)
 	}
 	std::random_shuffle(nums.begin(), nums.end());
 }
+
+inline int getBit(int num) {
+	int num = abs(num);
+	int count = 0;
+	while (num > 0)
+	{
+		num /= 10;
+		count++;
+	}
+	return count;
+}
+
+//获取一个数的第多少位 k[1,∞）
+inline int getK(int num, int k)
+{
+	return (int)(num / pow(10, k - 1)) % 10;
+}

@@ -39,6 +39,9 @@ public:
 	//8.计数排序
 	void countingSort(vector<int>& nums);
 
+	//9。基数排序
+	void radixSort(vector<int>& nums);
+
 	static void test();
 
 };

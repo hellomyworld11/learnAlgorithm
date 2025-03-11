@@ -341,6 +341,8 @@ void CSort::countingSort(vector<int>& nums)
 	//1. 获取数组最大数
 	//2. 从0遍历至最大数作为数组下标，值 存储这些数字的次数 
 	//3. 遍历数组依次放入nums
+	//时间复杂度O(n+m)  控件复杂度O(n+m)
+	//适用于 非负整数 且 数据量大，数据范围小的情况，如果最大数很大则不考虑用这种算法。
 	int m = 0;
 	for (auto num : nums)
 	{
@@ -353,16 +355,60 @@ void CSort::countingSort(vector<int>& nums)
 		counter[num]++;
 	}
 
-	int k = 0;
-	for (int i = 0; i < counter.size(); i++)
+	//old 不能处理对象的场景
+// 	int k = 0;
+// 	for (int i = 0; i < counter.size(); i++)
+// 	{
+// 		for (int j = 0; j < counter[i]; j++) 
+// 		{
+// 			nums[k++] = i;
+// 		}
+// 	}
+
+	//需要考虑 数组是对象的情况，无法决定同样值得对象哪些是前和后，所有要按照原数组和前缀合来排
+	//先求前缀后 即前i的次数之和。 比如 数组  1 0 2 0 1 3
+	// 排序后为 0 0 1 1 2 3 则 1 的前缀合为 0 的次数 2 加 1 的次数 2 = 4； 最后一次索引为3 
+	//为啥要前缀后，倒叙的时候相同对象可以排序。 比如两个1 可以按照原数组分前后了。
+	for (int i = 0; i < m; i++)
 	{
-		for (int j = 0; j < counter[i]; j++)
-		{
-			nums[k++] = i;
-		}
+		counter[i + 1] += counter[i];
 	}
 
-	//需要考虑 数组是对象的情况，无法决定同样值得对象哪些是前和后，所有要按照原数组来排
+	int n = nums.size();
+	vector<int> res(n);
+
+	for (int i = n - 1; i >= 0; i--)
+	{
+		//遍历原数组
+		int num = nums[i];
+		//获取最后一次的索引 ，即前缀合-1 
+		int prefix = counter[num];
+		res[prefix - 1] = num;
+		//前缀合-1 ，因为已经有一个num占据了位置。
+		counter[num]--;
+	}
+	nums = res;
+}
+
+void CSort::radixSort(vector<int>& nums)
+{
+	//1.从低位到高位依次进行计数排序。
+	int bit_num = getBit(nums[0]);
+
+	vector<int> bitnums;
+	for (int i = 0; i < bit_num; i++)
+	{
+		for (auto num : nums)
+		{
+			//获取第k位
+			bitnums.push_back(getK(num, i + 1));		
+		}
+
+		countingSort(bitnums);
+
+		
+
+	}
 
 }
 
