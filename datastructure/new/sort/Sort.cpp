@@ -11,6 +11,8 @@ void CSort::test()
 	//sort.bubbleSort(nums);
 	vector<int> nums;
 	generateNums(50, nums);
+	nums = { 10546151, 35663510, 42865989, 34862445, 81883077,
+		88906420, 72429244, 30524779, 82060337, 63832996 };
 	printVector(nums);
 	cout << "-----------" << endl;
 	//sort.insertSort(nums);
@@ -19,7 +21,9 @@ void CSort::test()
 	//sort.heapSort(nums);
 	//vector<float> floatnums = { 0.49f, 0.96f, 0.82f, 0.09f, 0.57f, 0.43f, 0.91f, 0.75f, 0.15f, 0.37f };
 	//sort.bucketSort(floatnums);
-	sort.countingSort(nums);
+	//sort.countingSort(nums);
+	
+	sort.radixSort(nums);
 	//printVector(floatnums);
 	printVector(nums);
 }
@@ -392,23 +396,39 @@ void CSort::countingSort(vector<int>& nums)
 
 void CSort::radixSort(vector<int>& nums)
 {
+	//时间复杂度O(n) 空间复杂度O(n+d)
+
 	//1.从低位到高位依次进行计数排序。
+	//获取位数
 	int bit_num = getBit(nums[0]);
 
-	vector<int> bitnums;
-	for (int i = 0; i < bit_num; i++)
+	//从低位到高位
+	for (int k = 0; k < bit_num; k++)
 	{
+		vector<int> counter(10, 0);
+		//每个数字的位进行计数
 		for (auto num : nums)
 		{
-			//获取第k位
-			bitnums.push_back(getK(num, i + 1));		
+			//获取第k位 ,计数
+			counter[getK(num, k + 1)]++;
 		}
 
-		countingSort(bitnums);
+		//前缀和
+		for (int i = 1; i < counter.size(); i++)
+		{
+			counter[i] += counter[i - 1];
+		}
 
-		
-
+		//倒序遍历
+		vector<int> res(nums.size());
+		for (int i = nums.size()-1; i >=0 ; i--)
+		{
+			int d = getK(nums[i], k+1);
+			int index = counter[d] - 1;
+			res[index] = nums[i];
+			counter[d] --;
+		}
+		nums = res;
 	}
-
 }
 

@@ -25,7 +25,7 @@ public:
 	//4.3 尾递归优化
 	void quickSort_tail(vector<int>& nums, int left, int right);
 	
-	//5. 归并排序
+	//5. 归并排序 分治思想
 	void mergeSort(vector<int>& nums, int left, int right);
 	void merge(vector<int>& nums, int left, int mid, int right);
 

@@ -65,7 +65,7 @@ inline void generateNums(int n, vector<int>& nums)
 }
 
 inline int getBit(int num) {
-	int num = abs(num);
+	num = abs(num);
 	int count = 0;
 	while (num > 0)
 	{
