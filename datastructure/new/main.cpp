@@ -18,6 +18,7 @@
 #include "graph/GraphAdjList.h"
 #include "searching/Searching.h"
 #include "sort/Sort.h"
+#include "Divide_Conquer/binary_search_recur.h"
 
 int main(int argc, char **argv)
 {
@@ -43,7 +44,8 @@ int main(int argc, char **argv)
 	//GraphAdjList::test_bfs();
 	//GraphAdjList::test_dfs();
 	//CSearching::test();
-	CSort::test();
+	//CSort::test();
+	test_divide_conquer();
 
 	getchar();
 	return 0;
