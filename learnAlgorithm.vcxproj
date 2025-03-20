@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="algorithm\UtilSort.cpp" />
     <ClCompile Include="datastructure\new\Divide_Conquer\binary_search_recur.cpp" />
+    <ClCompile Include="datastructure\new\Divide_Conquer\build_tree.cpp" />
     <ClCompile Include="datastructure\new\tree\AVLTree.cpp" />
     <ClCompile Include="datastructure\new\tree\BinarySearchTree.cpp" />
     <ClCompile Include="datastructure\new\tree\ArrayBinaryTree.cpp" />
@@ -151,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="algorithm\UtilSort.h" />
     <ClInclude Include="datastructure\new\Divide_Conquer\binary_search_recur.h" />
+    <ClInclude Include="datastructure\new\Divide_Conquer\build_tree.h" />
     <ClInclude Include="datastructure\new\tree\AVLTree.h" />
     <ClInclude Include="datastructure\new\tree\BinarySearchTree.h" />
     <ClInclude Include="datastructure\new\tree\ArrayBinaryTree.h" />
