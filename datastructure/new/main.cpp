@@ -18,8 +18,8 @@
 #include "graph/GraphAdjList.h"
 #include "searching/Searching.h"
 #include "sort/Sort.h"
-#include "Divide_Conquer/binary_search_recur.h"
-#include "Divide_Conquer/build_tree.h"
+#include "Divide_Conquer/divide_conquer.h"
+
 
 int main(int argc, char **argv)
 {
@@ -47,7 +47,8 @@ int main(int argc, char **argv)
 	//CSearching::test();
 	//CSort::test();
 	//test_divide_conquer();
-	test_buildtree();
+	//test_buildtree();
+	test_hanota();
 
 	getchar();
 	return 0;
