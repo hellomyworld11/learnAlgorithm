@@ -4,6 +4,12 @@
 #include "../util.h"
 
 
+//数组序列为二叉树
+
+
+//二叉树序列为数组
+
+
 
 /* 释放二叉树内存 */
 void freeTree(TreeNode *root);
@@ -44,6 +50,8 @@ void showTrunks(Trunk *p);
 void printTree(TreeNode *root, Trunk *prev, bool isRight);
 
 void printTree(TreeNode *root);
+
+
 
 
 

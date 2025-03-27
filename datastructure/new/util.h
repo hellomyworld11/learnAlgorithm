@@ -46,8 +46,6 @@ void printVector(vector<T> list)
 //生成随机数组 
 inline void generateNums(int n, vector<int>& nums)
 {
-	
-
 	//1.随机生成法
 //	unsigned int range = 100;
 // 	srand(time(0));

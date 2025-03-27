@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="algorithm\UtilSort.cpp" />
+    <ClCompile Include="datastructure\new\Backtracking\preorder_traversal_compact.cpp" />
     <ClCompile Include="datastructure\new\Divide_Conquer\divide_conquer.cpp" />
     <ClCompile Include="datastructure\new\tree\AVLTree.cpp" />
     <ClCompile Include="datastructure\new\tree\BinarySearchTree.cpp" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm\UtilSort.h" />
+    <ClInclude Include="datastructure\new\Backtracking\preorder_traversal_compact.h" />
     <ClInclude Include="datastructure\new\Divide_Conquer\divide_conquer.h" />
     <ClInclude Include="datastructure\new\tree\AVLTree.h" />
     <ClInclude Include="datastructure\new\tree\BinarySearchTree.h" />
