@@ -4,12 +4,13 @@
 #include "../util.h"
 
 
-//数组序列为二叉树
-
+//数组反序列为二叉树
+TreeNode* vectorToTree(vector<int> nums);
+TreeNode* vectorToTreeDFS(vector<int>& nums, int index);
 
 //二叉树序列为数组
-
-
+vector<int> TreeToVector(TreeNode* tree);
+void TreeToVectorDFS(TreeNode* tree, int index, vector<int>& res);
 
 /* 释放二叉树内存 */
 void freeTree(TreeNode *root);

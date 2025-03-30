@@ -19,6 +19,7 @@
 #include "searching/Searching.h"
 #include "sort/Sort.h"
 #include "Divide_Conquer/divide_conquer.h"
+#include "Backtracking/preorder_traversal_compact.h"
 
 
 int main(int argc, char **argv)
@@ -48,7 +49,8 @@ int main(int argc, char **argv)
 	//CSort::test();
 	//test_divide_conquer();
 	//test_buildtree();
-	test_hanota();
+	//test_hanota();
+	testPreOrder_traversal_compact();
 
 	getchar();
 	return 0;

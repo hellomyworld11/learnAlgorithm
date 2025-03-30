@@ -1,6 +1,46 @@
 #include "binary_tree.h"
 
 
+TreeNode * vectorToTree(vector<int> nums)
+{
+	return vectorToTreeDFS(nums, 0);
+}
+
+TreeNode* vectorToTreeDFS(vector<int>& nums, int index)
+{
+	if (index < 0 || index >= nums.size() || nums[index] == INT_MAX)
+	{
+		return nullptr;
+	}
+	TreeNode *node = new TreeNode(nums[index]);
+	node->left = vectorToTreeDFS(nums, 2 * index + 1);
+	node->right = vectorToTreeDFS(nums, 2 * index + 2);
+	return node;
+}
+
+std::vector<int> TreeToVector(TreeNode* tree)
+{
+	vector<int> res;
+	TreeToVectorDFS(tree, 0, res);
+	return res;
+}
+
+void TreeToVectorDFS(TreeNode* tree, int index, vector<int>& res)
+{
+	if (nullptr ==  tree || index < 0)
+	{
+		return;
+	}
+
+	while (index >= res.size())
+	{
+		res.push_back(INT_MAX);
+	}
+	res[index] = tree->val;
+	TreeToVectorDFS(tree->left, 2 * index + 1, res);
+	TreeToVectorDFS(tree->right, 2 * index + 2, res);
+}
+
 void freeTree(TreeNode *root)
 {
 	if (root == nullptr)
