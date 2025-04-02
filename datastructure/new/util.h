@@ -43,6 +43,15 @@ void printVector(vector<T> list)
 	cout << "]\n";
 }
 
+template <typename T>
+void printVectorMatrix(vector<vector<T>> matrix)
+{
+	cout << "[" << '\n';
+	for (vector<T> &list : matrix)
+		printVector(list);
+	cout << "]" << '\n';
+}
+
 //生成随机数组 
 inline void generateNums(int n, vector<int>& nums)
 {
