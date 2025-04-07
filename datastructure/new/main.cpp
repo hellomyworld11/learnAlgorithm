@@ -21,6 +21,8 @@
 #include "Divide_Conquer/divide_conquer.h"
 #include "Backtracking/preorder_traversal_compact.h"
 #include "Backtracking/permutations.h"
+#include "Backtracking/subset_sum.h"
+#include "Backtracking/n_queens.h"
 
 int main(int argc, char **argv)
 {
@@ -51,7 +53,9 @@ int main(int argc, char **argv)
 	//test_buildtree();
 	//test_hanota();
 	//testPreOrder_traversal_compact();
-	testPermutations();
+	//testPermutations();
+	//testSubsetsum();
+	testNqueens();
 
 	getchar();
 	return 0;
