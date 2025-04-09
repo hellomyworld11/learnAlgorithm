@@ -23,6 +23,7 @@
 #include "Backtracking/permutations.h"
 #include "Backtracking/subset_sum.h"
 #include "Backtracking/n_queens.h"
+#include "dynamicprograming/climbing_stairs.h"
 
 int main(int argc, char **argv)
 {
@@ -55,7 +56,8 @@ int main(int argc, char **argv)
 	//testPreOrder_traversal_compact();
 	//testPermutations();
 	//testSubsetsum();
-	testNqueens();
+	//testNqueens();
+	testClimbingStairs();
 
 	getchar();
 	return 0;

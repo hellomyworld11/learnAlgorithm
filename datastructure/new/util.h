@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <time.h>
+#include <chrono>
 
 using namespace std;
 
@@ -87,3 +88,19 @@ inline int getK(int num, int k)
 {
 	return (int)(num / pow(10, k - 1)) % 10;
 }
+
+
+struct CountTime {
+	CountTime()
+	{
+		auto start = std::chrono::high_resolution_clock::now();
+	}
+	~CountTime()
+	{
+		end = std::chrono::high_resolution_clock::now();
+		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+		std::cout << "算法执行时间: " << duration.count() << " 微秒" << std::endl;
+	}
+	std::chrono::steady_clock::time_point start;
+	std::chrono::steady_clock::time_point end;
+};
