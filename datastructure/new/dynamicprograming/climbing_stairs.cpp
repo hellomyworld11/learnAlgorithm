@@ -127,6 +127,49 @@ int climbingStairs_dpComp(int n)
 	return pre;
 }
 
+int minCostClimbingStairsDp(vector<int>& cost)
+{
+	int n = cost.size() - 1;
+	if (n == 1 || n == 2)
+	{
+		return cost[n];
+	}
+
+	vector<int> dp(n+1);
+	dp[1] = cost[1];
+	dp[2] = cost[2];
+
+	for (int i = 3; i <= n ; i++)
+	{
+		dp[i] = min(dp[i - 1], dp[i - 2]) + cost[i];
+	}
+	return dp[n];
+}
+
+int climbingStairsConstraintDP(int n)
+{
+	if (1 == n || 2 == n)
+	{
+		return 1;
+	}
+
+	vector<vector<int>> dp(n+1, vector<int>(3, 0));
+	//1阶楼梯时，只有1阶方法 
+	dp[1][1] = 1;
+	dp[1][2] = 0;
+	//2阶楼梯 只能2阶，不能连续2个1阶
+	dp[2][1] = 0;
+	dp[2][2] = 1;
+	for (int i = 3; i <= n; i++)
+	{
+		//当上一步爬1阶到这一层时，上上步只能爬2阶
+		dp[i][1] = dp[i - 1][2];
+		//当上一步爬2阶到这一层时，上上步可以爬1阶或2阶
+		dp[i][2] = dp[i - 2][1] + dp[i - 2][2];
+	}
+	return  dp[n][1] + dp[n][2];
+}
+
 void testClimbingStairs()
 {
 	int n = 5;
@@ -140,5 +183,13 @@ void testClimbingStairs()
 	res = climbingStairs_dp(n);
 	cout << "动态规划法： 爬 " << n << " 阶楼梯共有 " << res << " 种方案" << endl;
 //	printVectorMatrix(ressteps);
+	vector<int> cost = { 0, 1, 10, 1, 1, 1, 10, 1, 1, 10, 1 };
+	cout << "输入楼梯的代价列表为 ";
+	printVector(cost);
 
+	res = minCostClimbingStairsDp(cost);
+	cout << "爬完楼梯的最低代价为 " << res << endl;
+
+	res = climbingStairsConstraintDP(n);
+	cout << "爬 " << n << " 阶楼梯共有 " << res << " 种方案" << endl;
 }

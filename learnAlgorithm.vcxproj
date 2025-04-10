@@ -130,6 +130,7 @@
     <ClCompile Include="datastructure\new\Backtracking\subset_sum.cpp" />
     <ClCompile Include="datastructure\new\Divide_Conquer\divide_conquer.cpp" />
     <ClCompile Include="datastructure\new\dynamicprograming\climbing_stairs.cpp" />
+    <ClCompile Include="datastructure\new\dynamicprograming\minpath_sum.cpp" />
     <ClCompile Include="datastructure\new\tree\AVLTree.cpp" />
     <ClCompile Include="datastructure\new\tree\BinarySearchTree.cpp" />
     <ClCompile Include="datastructure\new\tree\ArrayBinaryTree.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="datastructure\new\Backtracking\subset_sum.h" />
     <ClInclude Include="datastructure\new\Divide_Conquer\divide_conquer.h" />
     <ClInclude Include="datastructure\new\dynamicprograming\climbing_stairs.h" />
+    <ClInclude Include="datastructure\new\dynamicprograming\minpath_sum.h" />
     <ClInclude Include="datastructure\new\tree\AVLTree.h" />
     <ClInclude Include="datastructure\new\tree\BinarySearchTree.h" />
     <ClInclude Include="datastructure\new\tree\ArrayBinaryTree.h" />

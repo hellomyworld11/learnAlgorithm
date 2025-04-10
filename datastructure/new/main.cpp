@@ -24,6 +24,7 @@
 #include "Backtracking/subset_sum.h"
 #include "Backtracking/n_queens.h"
 #include "dynamicprograming/climbing_stairs.h"
+#include "dynamicprograming/minpath_sum.h"
 
 int main(int argc, char **argv)
 {
@@ -57,8 +58,8 @@ int main(int argc, char **argv)
 	//testPermutations();
 	//testSubsetsum();
 	//testNqueens();
-	testClimbingStairs();
-
+	//testClimbingStairs();
+	testMinPath();
 	getchar();
 	return 0;
 }

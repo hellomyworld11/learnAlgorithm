@@ -26,5 +26,14 @@ int climbingStairs_dp(int n);
 //5. 动态规划 空间优化
 int climbingStairs_dpComp(int n);
 
+//6. 动态规划 求爬楼梯最小代价
+int minCostClimbingStairsDp(vector<int>& cost);
+
+// 7. 给定一个共有n阶的楼梯，你每步可以上1阶或者2阶，
+//但不能连续两轮跳1阶，请问有多少种方案可以爬到楼顶？
+//不满足无后效性 需要添加约束
+int climbingStairsConstraintDP(int n);
+
+
 void testClimbingStairs();
 
