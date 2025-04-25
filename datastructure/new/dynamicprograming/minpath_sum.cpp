@@ -98,6 +98,7 @@ int minPathSumDPComp(vector<vector<int>> &grid, int row, int col)
 		}
 	}
 	return dp[m - 1];
+}
 
 void testMinPath()
 {

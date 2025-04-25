@@ -25,6 +25,7 @@
 #include "Backtracking/n_queens.h"
 #include "dynamicprograming/climbing_stairs.h"
 #include "dynamicprograming/minpath_sum.h"
+#include "dynamicprograming/knapsack.h"
 
 int main(int argc, char **argv)
 {
@@ -59,7 +60,10 @@ int main(int argc, char **argv)
 	//testSubsetsum();
 	//testNqueens();
 	//testClimbingStairs();
-	testMinPath();
+	//testMinPath();
+
+	testKnapsack();
+
 	getchar();
 	return 0;
 }
