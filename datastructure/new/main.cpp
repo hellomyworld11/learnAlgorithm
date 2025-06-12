@@ -26,6 +26,7 @@
 #include "dynamicprograming/climbing_stairs.h"
 #include "dynamicprograming/minpath_sum.h"
 #include "dynamicprograming/knapsack.h"
+#include "dynamicprograming/coin_change.h"
 
 int main(int argc, char **argv)
 {
@@ -62,7 +63,8 @@ int main(int argc, char **argv)
 	//testClimbingStairs();
 	//testMinPath();
 
-	testKnapsack();
+	//testKnapsack();
+	test_coin_change();
 
 	getchar();
 	return 0;

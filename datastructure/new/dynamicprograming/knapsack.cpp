@@ -88,7 +88,7 @@ void testKnapsack()
 	cout << "不超过背包容量的最大物品价值为 " << res << endl;
 
 	// 动态规划
-//	res = knapsackDP(wgt, val, cap);
+	res = knapsack_DP(wgt, val, cap);
 	cout << "不超过背包容量的最大物品价值为 " << res << endl;
 
 	// 空间优化后的动态规划
