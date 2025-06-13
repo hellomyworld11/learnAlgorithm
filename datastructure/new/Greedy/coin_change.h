@@ -1,0 +1,10 @@
+#pragma once
+#include "../util.h"
+
+//Ã∞–ƒÀ„∑® ¡„«Æ∂“ªª
+int coinChangeGreedy(vector<int> &coins, int amt);
+
+
+
+
+void test_coinChange_greedy();

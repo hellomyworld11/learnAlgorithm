@@ -27,6 +27,7 @@
 #include "dynamicprograming/minpath_sum.h"
 #include "dynamicprograming/knapsack.h"
 #include "dynamicprograming/coin_change.h"
+#include "Greedy/coin_change.h"
 
 int main(int argc, char **argv)
 {
@@ -64,7 +65,8 @@ int main(int argc, char **argv)
 	//testMinPath();
 
 	//testKnapsack();
-	test_coin_change();
+	//test_coin_change();
+	test_coinChange_greedy();
 
 	getchar();
 	return 0;
