@@ -37,3 +37,16 @@ double fractionalKnapsack(vector<int> &wgt, vector<int> &val, int cap)
 	}
 	return maxval;
 }
+
+void test_fractional_knapsack()
+{
+	vector<int> wgt = { 10, 20, 30, 40, 50 };
+	vector<int> val = { 50, 120, 150, 210, 240 };
+	int cap = 50;
+
+	// 贪心算法
+	double res = fractionalKnapsack(wgt, val, cap);
+	cout << "不超过背包容量的最大物品价值为 " << res << endl;
+
+	return ;
+}

@@ -135,6 +135,8 @@
     <ClCompile Include="datastructure\new\dynamicprograming\minpath_sum.cpp" />
     <ClCompile Include="datastructure\new\Greedy\coin_change.cpp" />
     <ClCompile Include="datastructure\new\Greedy\fractonal_knapsack.cpp" />
+    <ClCompile Include="datastructure\new\Greedy\maxval.cpp" />
+    <ClCompile Include="datastructure\new\Greedy\max_product_cut.cpp" />
     <ClCompile Include="datastructure\new\tree\AVLTree.cpp" />
     <ClCompile Include="datastructure\new\tree\BinarySearchTree.cpp" />
     <ClCompile Include="datastructure\new\tree\ArrayBinaryTree.cpp" />
@@ -171,6 +173,8 @@
     <ClInclude Include="datastructure\new\dynamicprograming\minpath_sum.h" />
     <ClInclude Include="datastructure\new\Greedy\coin_change.h" />
     <ClInclude Include="datastructure\new\Greedy\fractonal_knapsack.h" />
+    <ClInclude Include="datastructure\new\Greedy\maxval.h" />
+    <ClInclude Include="datastructure\new\Greedy\max_product_cut.h" />
     <ClInclude Include="datastructure\new\tree\AVLTree.h" />
     <ClInclude Include="datastructure\new\tree\BinarySearchTree.h" />
     <ClInclude Include="datastructure\new\tree\ArrayBinaryTree.h" />

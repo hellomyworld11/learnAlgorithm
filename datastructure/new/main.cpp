@@ -28,6 +28,8 @@
 #include "dynamicprograming/knapsack.h"
 #include "dynamicprograming/coin_change.h"
 #include "Greedy/coin_change.h"
+#include "Greedy/maxval.h"
+#include "Greedy/max_product_cut.h"
 
 int main(int argc, char **argv)
 {
@@ -66,7 +68,9 @@ int main(int argc, char **argv)
 
 	//testKnapsack();
 	//test_coin_change();
-	test_coinChange_greedy();
+	//test_coinChange_greedy();
+	//testMaxval();
+	testMaxProductCut();
 
 	getchar();
 	return 0;
