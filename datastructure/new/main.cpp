@@ -30,6 +30,7 @@
 #include "Greedy/coin_change.h"
 #include "Greedy/maxval.h"
 #include "Greedy/max_product_cut.h"
+#include "array_list/SkipList.h"
 
 int main(int argc, char **argv)
 {
@@ -70,7 +71,8 @@ int main(int argc, char **argv)
 	//test_coin_change();
 	//test_coinChange_greedy();
 	//testMaxval();
-	testMaxProductCut();
+	//testMaxProductCut();
+	testSkipList();
 
 	getchar();
 	return 0;
